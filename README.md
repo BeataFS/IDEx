@@ -1,2 +1,2 @@
 # IDEx
-Annotating NHS and hospital numbers, Patient DOB and Post Code using GATE 8.5.1
+An application for extracting Patient's NHS number,Hospital number, Date of Birth, and Post Code from clinic letters. Created using the open source GATE framework (Gate 8.5.1).
