@@ -1,0 +1,20 @@
+Phase: Dates
+Input: Lookup2 Token SpaceToken Numeric
+Options: control=appelt
+* 
+ * Get date 
+*/
+
+Rule: Date_2
+Priority: 100
+
+
+(
+	({Numeric.rule == Numerals})a
+	({Numeric.rule == Numerals})b
+):match
+-->
+:match.Date2 = {rule = Date_2, value = :match.a.string,b.string} 
+
+
+

@@ -1,0 +1,15 @@
+Phase: PostCode
+Input: Number AlthNum SpaceToken 
+Options: control=appelt
+
+Rule: PostCode1
+
+(
+	{AlthNum}
+	{SpaceToken}
+	{AlthNum}
+	):match
+	
+-->
+:match.PostCode = { rule = PostCode1, value = :match@string}
+

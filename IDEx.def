@@ -1,0 +1,5 @@
+nhs.lst:person:health_term:NHS:Lookup2
+hosp.lst:person:health_term::Lookup2
+birth.lst:person:date_term::Lookup2
+daydate.lst:Numerals:date_term::Lookup2
+months.lst:Numerals:date_term::Lookup2

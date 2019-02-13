@@ -1,0 +1,33 @@
+Phase: Numbers
+Input: Token 
+Options: control=first
+
+Rule: AlthNum1
+Priority: 100
+(
+	({Token.kind == word, Token.length == 1})
+	{Token.kind == number}
+	):match
+	
+-->
+:match.AlthNum = { rule = AlthNum1, value = :match@string}
+
+Rule: AlthNum2
+Priority: 100
+(
+	({Token.kind == word, Token.length >1 , Token.length <3, Token.orth == allCaps})
+	{Token.kind == number}
+	):match
+	
+-->
+:match.AlthNum = { rule = AlthNum2, value = :match@string}
+
+Rule: AlthNum3
+Priority: 99
+(
+	{Token.kind == number}
+	({Token.kind == word, Token.length == 2, Token.orth == allCaps})
+	):match
+	
+-->
+:match.AlthNum = { rule = AlthNum3, value = :match@string}

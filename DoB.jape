@@ -1,0 +1,22 @@
+Phase: Dates
+Input: Lookup2 Token SpaceToken DateBio
+Options: control=once
+
+
+/* 
+ * Get date of birth
+*/
+
+Rule: DoB_2
+Priority: 100
+(
+	{Lookup2.majorType == "person", Lookup2.minorType == "date_term"}
+	({Token.kind == "punctuation"})?
+	({SpaceToken.kind == "space"})? 
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	{DateBio}	
+):match
+-->
+:match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value}
+
+
