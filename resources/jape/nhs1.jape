@@ -6,13 +6,13 @@ Options: control=once
 Rule: nhs1
 Priority: 100
 (
-        {Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS}
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS}
         {Token.kind == "punctuation"}
         {SpaceToken.kind == "space"}
-        {Numeric.rule == Numerals}
+        {Numeric.rule == Numerals}):a
 ):match
 -->
-:match.NHS_number = {rule = NHS1, value = :match.Numeric.value}
+:match.NHS_number = {rule = NHS1, value = :match.Numeric.value, string = :a@string}
 
 
 

@@ -10,13 +10,13 @@ Options: control=once
 Rule: DoB_2
 Priority: 100
 (
-	{Lookup2.majorType == "person", Lookup2.minorType == "date_term"}
+	({Lookup2.majorType == "person", Lookup2.minorType == "date_term"}
 	({Token.kind == "punctuation"})?
 	({SpaceToken.kind == "space"})? 
 	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
-	{DateBio}	
+	{DateBio}):a	
 ):match
 -->
-:match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value}
+:match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value, string = :a@string}
 
 

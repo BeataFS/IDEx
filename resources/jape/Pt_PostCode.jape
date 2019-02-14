@@ -15,7 +15,7 @@ Priority: 100
         
 ):match
 -->
-:match.Pt_PostCode = {rule = Pt_PostCode, string = :match.PostCode.value}
+:match.Pt_PostCode = {rule = Pt_PostCode, value = :match.PostCode.value, string = :match.PostCode.value}
 
 
 Rule: Pt_PostCode2
@@ -29,6 +29,6 @@ Priority: 99
         
 ):match
 -->
-:match.Pt_PostCode = {rule = Pt_PostCode2, string = :match.PostCode.value}
+:match.Pt_PostCode = {rule = Pt_PostCode2, value = :match.PostCode.value, string = :match.PostCode.value}
 
 
