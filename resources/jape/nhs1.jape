@@ -7,8 +7,9 @@ Rule: nhs1
 Priority: 100
 (
         ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS}
-        {Token.kind == "punctuation"}
-        {SpaceToken.kind == "space"}
+        ({SpaceToken.kind == "space"})?
+        ({Token.kind == "punctuation"})?
+        ({SpaceToken.kind == "space"})?
         {Numeric.rule == Numerals}):a
 ):match
 -->

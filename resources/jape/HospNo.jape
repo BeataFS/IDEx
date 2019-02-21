@@ -33,7 +33,9 @@ Priority: 100
 Rule: HospNo3
 Priority: 99
 (
-        ({Token.category == NNP, Token.kind == word, Token.length == 2}
+        (({Token.category == NNP, Token.kind == word, Token.length <5})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+        {Token.category == NNP, Token.kind == word, Token.length <5}
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation})?
