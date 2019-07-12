@@ -1,0 +1,41 @@
+Phase:	Gender
+Input: Lookup Lookup2
+Options: control = appelt
+
+Rule: isFemale1
+(
+ ({Lookup.majorType == person_first, Lookup.minorType == female})
+):match
+-->
+:match.Gender = {rule = isFemale, value = Female}
+
+
+Rule: isFemale2
+(
+ ({Lookup.majorType == title, Lookup.minorType == female})
+):match
+-->
+:match.Gender = {rule = isFemale, value = Female}
+
+
+
+Rule: isMale1
+(
+ ({Lookup.majorType == person_first, Lookup.minorType == male})
+):match
+-->
+:match.Gender = {rule = isMale1, value = Male}
+
+Rule: isMale2
+(
+ ({Lookup.majorType == title, Lookup.minorType == male})
+):match
+-->
+:match.Gender = {rule = isMale2, value = Male}
+
+Rule: isMale3
+(
+ ({Lookup2.language == gender, Lookup2.majorType == person, Lookup2.minorType == ref_term})
+):match
+-->
+:match.Gender = {rule = isMale3, value = Male}

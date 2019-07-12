@@ -54,17 +54,11 @@
         <artifact>jdbclookup</artifact>
         <version>0.3-SNAPSHOT</version>
       </gate.creole.Plugin-Maven>
-      <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$relpath$../yodie-pipeline/plugins/YodiePlugin/</urlString>
-      </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>groovy</artifact>
         <version>8.5</version>
       </gate.creole.Plugin-Maven>
-      <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$relpath$../yodie-pipeline/plugins/VirtualCorpus/</urlString>
-      </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>tagger-np-chunking</artifact>
@@ -80,8 +74,31 @@
         <artifact>java</artifact>
         <version>0.4</version>
       </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>annie</artifact>
+        <version>8.6</version>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>tools</artifact>
+        <version>8.6</version>
+        <downloadListeners/>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>format-brat</artifact>
+        <version>1.0</version>
+        <downloadListeners/>
+      </gate.creole.Plugin-Maven>
       <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$relpath$../yodie-pipeline/plugins/Tagger_ConText/</urlString>
+        <urlString>$relpath$../../NLP/GATE/yodie-pipeline/yodie-pipeline/plugins/YodiePlugin/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../NLP/GATE/yodie-pipeline/yodie-pipeline/plugins/VirtualCorpus/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../NLP/GATE/yodie-pipeline/yodie-pipeline/plugins/Tagger_ConText/</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
     </localList>
     <collectionType>java.util.Collections$UnmodifiableSet</collectionType>
@@ -91,973 +108,709 @@
       <docList>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let1.docx_00013</resourceName>
+          <resourceName>Epi_Let20.docx.txt_000B4</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let1.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let20.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let10.docx_00014</resourceName>
+          <resourceName>Epi_Let21.docx.txt_000B5</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let10.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let21.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let11.docx_00015</resourceName>
+          <resourceName>Epi_Let22.docx.txt_000B6</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let11.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let22.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let12.docx_00016</resourceName>
+          <resourceName>Epi_Let23.docx.txt_000B7</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let12.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let23.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let13.docx_00017</resourceName>
+          <resourceName>Epi_Let24.docx.txt_000B8</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let13.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let24.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let14.docx_00018</resourceName>
+          <resourceName>Epi_Let25.docx.txt_000B9</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let14.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let25.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let15.docx_00019</resourceName>
+          <resourceName>Epi_Let26.docx.txt_000BA</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let15.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let26.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let16.docx_0001A</resourceName>
+          <resourceName>Epi_Let27.docx.txt_000BB</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let16.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let27.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let17.docx_0001B</resourceName>
+          <resourceName>Epi_Let28.docx.txt_000BC</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let17.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let28.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let18.docx_0001C</resourceName>
+          <resourceName>Epi_Let29.docx.txt_000BD</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let18.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let29.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let19.docx_0001D</resourceName>
+          <resourceName>Epi_Let30.docx.txt_000BE</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let19.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let30.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let2.docx_0001E</resourceName>
+          <resourceName>Epi_Let31.docx.txt_000BF</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let2.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let31.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let20.docx_0001F</resourceName>
+          <resourceName>Epi_Let32.docx.txt_000C0</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let20.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let32.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let21.docx_00020</resourceName>
+          <resourceName>Epi_Let33.docx.txt_000C1</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let21.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let33.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let22.docx_00021</resourceName>
+          <resourceName>Epi_Let34.docx.txt_000C2</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let22.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let34.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let23.docx_00022</resourceName>
+          <resourceName>Epi_Let35.docx.txt_000C3</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let23.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let35.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let24.docx_00023</resourceName>
+          <resourceName>Epi_Let36.docx.txt_000C4</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let24.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let36.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let25.docx_00024</resourceName>
+          <resourceName>Epi_Let37.docx.txt_000C5</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let25.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let37.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let26.docx_00025</resourceName>
+          <resourceName>Epi_Let38.docx.txt_000C6</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let26.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let38.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let27.docx_00026</resourceName>
+          <resourceName>Epi_Let39.docx.txt_000C7</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let27.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let39.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let28.docx_00027</resourceName>
+          <resourceName>Epi_Let40.docx.txt_000C8</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let28.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let40.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let29.docx_00028</resourceName>
+          <resourceName>Epi_Let41.docx.txt_000C9</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let29.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let41.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let3.docx_00029</resourceName>
+          <resourceName>Epi_Let42.docx.txt_000CA</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let3.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let42.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let30.docx_0002A</resourceName>
+          <resourceName>Epi_Let43.docx.txt_000CB</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let30.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let43.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let4.docx_0002B</resourceName>
+          <resourceName>Epi_Let44.docx.txt_000CC</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let4.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let44.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let5.docx_0002C</resourceName>
+          <resourceName>Epi_Let45.docx.txt_000CD</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let5.docx</urlString>
+                  <urlString>$relpath$../../letters/200_letters_txt/test_2%20%20letters/Epi_Let45.docx.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
               </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let6.docx_0002D</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
               <entry>
                 <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let6.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let7.docx_0002E</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let7.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let8.docx_0002F</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let8.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Epi_Let9.docx_00030</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/Epi_Let9.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet1.docx_00031</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet1.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet12.docx_00032</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet12.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet13.docx_00033</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet13.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet14.docx_00034</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet14.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet15.docx_00035</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet15.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet17.docx_00036</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet17.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet3.docx_00037</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet3.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet5.docx_00038</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet5.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet6.docx_00039</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet6.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet7.docx_0003A</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet7.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet8.docx_0003B</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet8.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>NewLet9.docx_0003C</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF-8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../../../media/beata/TI31382600A/Documents%20and%20Settings/beatafs/Documents/letters/42_letters/NewLet9.docx</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
+                <string>UTF8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
       </docList>
       <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>40let</resourceName>
+      <resourceName>test</resourceName>
       <initParams class="gate.util.persistence.MapPersistence">
         <mapType>gate.util.SimpleFeatureMapImpl</mapType>
         <localMap/>
@@ -1325,6 +1078,34 @@
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
             </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE:Gender</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$resources/jape/Gender.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </runtimeParams>
             <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
             <resourceName>IDEx</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
@@ -1463,6 +1244,34 @@
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
             <runtimeParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE:Pt_Gender</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$resources/jape/Pt_Gender.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
                   <string>outputASName</string>
@@ -1480,8 +1289,9 @@
                       <string>Hosp_number</string>
                       <string>Date_of_Birth</string>
                       <string>Pt_PostCode</string>
+                      <string>Pt_Gender</string>
                     </localList>
-                    <collectionType>java.util.ArrayList</collectionType>
+                    <collectionType>java.util.Arrays$ArrayList</collectionType>
                   </gate.util.persistence.CollectionPersistence>
                 </entry>
               </localMap>
@@ -1520,6 +1330,8 @@
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[15]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[16]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[17]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[18]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[19]/pr"/>
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>

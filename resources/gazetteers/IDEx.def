@@ -3,3 +3,6 @@ hosp.lst:person:health_term::Lookup2
 birth.lst:person:date_term::Lookup2
 daydate.lst:Numerals:date_term::Lookup2
 months.lst:Numerals:date_term::Lookup2
+letter.lst:reference:ref_term::Lookup2
+consult.lst:reference:health_term::Lookup2
+patient.lst:person:ref_term:gender:Lookup2

@@ -1,0 +1,13 @@
+patient:value=general
+man:value=male
+boy:value=male
+gentleman:value=male
+woman:value=female
+lady:value=female
+girl:value=female
+his:value=male
+her:value=female
+child:value=general
+she:value=female
+he:value=male
+him:value=male
