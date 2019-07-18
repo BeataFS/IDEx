@@ -1,36 +1,35 @@
 Phase:	Gender
-Input: Token Lookup2 Gender SpaceToken Sentence
-Options: control = appelt
+Input: Token Lookup2 FullName TitleName SpaceToken Sentence
+Options: control = Appelt
 
 Rule: Pt_Gender
 (
  ({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
   {Token.kind == punctuation}
   ({SpaceToken})?
-  {Gender}
+  {FullName}
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender, value = :match.Gender.value}
+:match.Pt_Gender = {rule = Pt_Gender, value = :match.FullName.value}
 
 
 Rule: Pt_Gender2
 (
-	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
+	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+	 {Token.kind == punctuation}
 	({SpaceToken})?
-	{Gender}
+	{TitleName}
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender2, value = :match.Gender.value}
+:match.Pt_Gender = {rule = Pt_Gender2, value = :match.TitleName.value}
 
 Rule: Pt_Gender3
 (
-	({Token})?
+	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+	 {Token.kind == punctuation}
 	({SpaceToken})?
-	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
-	({SpaceToken})?
-	({Token})?
-	({SpaceToken})?
-	({Lookup2.majorType == person, Lookup2.mirorType == ref_term}):a
+	({Lookup2.majorType == person, Lookup2.minorType == female}):a
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender3, value = :match.a.value}
+:match.Pt_Gender = {rule = Pt_Gender3, value = female}
+

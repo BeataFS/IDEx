@@ -1078,15 +1078,15 @@
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
             </runtimeParams>
-            <resourceType>gate.creole.Transducer</resourceType>
-            <resourceName>JAPE:Gender</resourceName>
+            <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
+            <resourceName>IDEx</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
-                  <string>grammarURL</string>
+                  <string>listsURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$resources/jape/Gender.jape</uriString>
+                    <uriString>$relpath$resources/gazetteers/IDEx.def</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -1106,15 +1106,15 @@
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
             </runtimeParams>
-            <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
-            <resourceName>IDEx</resourceName>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE:FullName</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
-                  <string>listsURL</string>
+                  <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$resources/gazetteers/IDEx.def</uriString>
+                    <uriString>$relpath$resources/jape/Full_Name.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -1274,12 +1274,12 @@
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
-                  <string>outputASName</string>
-                  <string>IDEx</string>
-                </entry>
-                <entry>
                   <string>tagASName</string>
                   <string>Original markups</string>
+                </entry>
+                <entry>
+                  <string>outputASName</string>
+                  <string>IDEx</string>
                 </entry>
                 <entry>
                   <string>annotationTypes</string>
@@ -1291,7 +1291,7 @@
                       <string>Pt_PostCode</string>
                       <string>Pt_Gender</string>
                     </localList>
-                    <collectionType>java.util.Arrays$ArrayList</collectionType>
+                    <collectionType>java.util.ArrayList</collectionType>
                   </gate.util.persistence.CollectionPersistence>
                 </entry>
               </localMap>

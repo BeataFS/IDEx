@@ -1,0 +1,25 @@
+Phase:	Gender
+Input: Lookup2 
+Options: control = Appelt
+
+Rule: GenderFromTextm
+Priority: 100
+
+
+(
+	({Lookup2.majorType == person, Lookup2.minorType == ref_term, Lookup2.value == male})[3]
+	
+):match
+-->
+:match.Gender = {rule = GenderFromTextm, value = male}
+
+
+Rule: GenderFromTextf
+Priority: 100
+
+(
+	({Lookup2.majorType == person, Lookup2.minorType == ref_term, Lookup2.value == female})[3]
+	
+):match
+-->
+:match.Gender = {rule = GenderFromTextf, value = female}
