@@ -1,6 +1,11 @@
 Phase:	Gender
-Input: Lookup Lookup2 SpaceToken Token
-Options: control = First
+Input: Lookup2 SpaceToken 
+Options: control = Appelt
+
+/* 
+  * Patient gender based on name withn text together with health terms
+*/
+
 
 
 Rule: GenderFromTextm
@@ -29,4 +34,8 @@ Priority: 100
 :match.Pt_Gender = {rule = GenderFromTextf, value = female}
 
 
-    
+  
+
+
+
+  
