@@ -1,0 +1,40 @@
+Phase:	Gender
+Input: Token Lookup2 FullName TitleName SpaceToken Sentence
+Options: control = Appelt
+
+/* 
+  * Patient gender based on full name and full name and title in the reference part of  clinic letter
+*/
+
+
+Rule: Pt_Gender
+(
+ ({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+  {Token.kind == punctuation}
+  ({SpaceToken})?
+  {FullName}
+):match
+-->
+:match.Pt_Gender = {rule = Pt_Gender, value = :match.FullName.value}
+
+
+Rule: Pt_Gender2
+(
+	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+	 {Token.kind == punctuation}
+	({SpaceToken})?
+	{TitleName}
+):match
+-->
+:match.Pt_Gender = {rule = Pt_Gender2, value = :match.TitleName.value}
+
+Rule: Pt_Gender3
+(
+	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+	 {Token.kind == punctuation}
+	({SpaceToken})?
+	({Lookup2.majorType == person, Lookup2.minorType == female}):a
+):match
+-->
+:match.Pt_Gender = {rule = Pt_Gender3, value = female}
+

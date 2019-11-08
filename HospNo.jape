@@ -1,0 +1,86 @@
+Phase: Hosp_num1
+Input:  Token Lookup2 Numeric AlthNum
+Options: control=once
+
+
+
+
+Rule: HospNo1
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+        {Token.kind == punctuation}
+        {AlthNum}):a
+		
+        
+):match
+-->
+:match.Hosp_number = {rule = HospNo1, value = :match.AlthNum.value, string = :a@string}
+
+
+
+Rule: HospNo2
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+        {Token.kind == punctuation}
+        ({Token.category == NN, Token.length == 1})?
+        {Numeric.rule == Numerals, Numeric.length <8}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo2, value = :match.Numeric.value, string = :a@string}
+
+Rule: HospNo3
+Priority: 99
+(
+        (({Token.category == NNP, Token.kind == word, Token.length <5})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+        {Token.category == NNP, Token.kind == word, Token.length <5}
+        {Token.kind == punctuation, Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation})?
+		{AlthNum}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo3, value = :match.AlthNum.value, string = :a@string}
+
+Rule: HospNo4
+Priority: 99
+(
+		({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+		{Token.kind == punctuation}	
+        {Token.category == NNP, Token.kind == Word}
+        {Token.kind == punctuation}
+		({Token.category == NNP})?
+        ({Token.kind == punctuation})?
+        ({Token.category == NN, Token.length == 1})?
+        {Numeric.rule == Numerals, Numeric.length <8}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo4, value = :match.Numeric.value, string = :a@string}
+
+Rule: HospNo5
+Priority: 99
+(
+        ({Token.category == NNP, Token.kind == word, Token.length == 2}
+        {Token.kind == punctuation,Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation, Token.string !="("})
+		{Numeric.rule == Numerals, Numeric.length <8}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo5, value = :match.Numeric.value, string = :a@string}
+
+Rule: HospNo6
+Priority: 98
+(
+        (({Token.category == NNP, Token.kind == word, Token.length <5})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+        {Token.category == NNP, Token.kind == word, Token.length <5}
+        {Token.kind == punctuation, Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+		{Numeric.rule == Numerals, Numeric.length <8}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo6, value = :match.Number.value, string = :a@string}

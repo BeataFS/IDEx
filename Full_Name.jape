@@ -1,0 +1,86 @@
+Phase:	Person
+Input: SpaceToken Lookup2 Token Sentence
+Options: control = Appelt
+
+Rule: FullNameF
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == female}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == female})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == male})):a
+):match
+-->
+:match.FullName = {rule = FullNameF, string = :a@string, value = female}
+
+Rule: FullNameF
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == female}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == female})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == female})):a
+):match
+-->
+:match.FullName = {rule = FullNameF, string = :a@string, value = female}
+
+Rule: FullNameF
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == female}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == female})?
+    ({SpaceToken})?
+    {Token.kind == word, Token.orth == upperInitial})):a
+):match
+-->
+:match.FullName = {rule = FullNameF, string = :a@string, value = female}
+
+
+
+
+
+
+Rule: FullNameM
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == male}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == male})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == female})):a
+):match
+-->
+:match.FullName = {rule = FullNameM, string = :a@string, value = male}
+
+Rule: FullNameM
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == male}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == male})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == male})):a
+):match
+-->
+:match.FullName = {rule = FullNameM, string = :a@string, value = male}
+
+Rule: FullNameM
+Priority: 100
+
+(
+    (({Lookup2.majorType == person, Lookup2.minorType == male}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == male})?
+    ({SpaceToken})?
+    {Token.kind == word, Token.orth == upperInitial})):a
+):match
+-->
+:match.FullName = {rule = FullNameM, string = :a@string, value = male}

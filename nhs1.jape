@@ -1,0 +1,22 @@
+Phase: NHS_num1
+Input:  Token Lookup2 SpaceToken Numeric
+Options: control=once
+
+
+Rule: nhs1
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS}
+        ({SpaceToken.kind == "space"})?
+        ({Token.kind == "punctuation"})?
+        ({SpaceToken.kind == "space"})?
+        {Numeric.rule == Numerals}):a
+):match
+-->
+:match.NHS_number = {rule = NHS1, value = :match.Numeric.value, string = :a@string}
+
+
+
+
+
+

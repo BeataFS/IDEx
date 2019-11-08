@@ -1,0 +1,19 @@
+Phase: removeUselessLookups
+Input:  Lookup 
+Options: control=all
+
+
+Rule: removeUselessLookups
+
+(
+    ( {Lookup.majorType == person_first, Lookup.minorType == male, Lookup.string == "DOB"})
+    
+):match
+-->
+:umls { 
+  inputAS.removeAll();
+}
+
+
+
+
