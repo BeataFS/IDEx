@@ -1,6 +1,6 @@
 Phase:	Gender
 Input: Lookup2 
-Options: control = Appelt
+Options: control = Once
 
 /* 
   * Patient gender based on 3 consecutive personal pronouns = male / female in Lookup2
