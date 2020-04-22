@@ -10,12 +10,12 @@ Priority: 100
         
         
         {Date_of_Birth}
-        {PostCode}
+        ({PostCode}):PC
 		
         
 ):match
 -->
-:match.Pt_PostCode = {rule = Pt_PostCode, value = :match.PostCode.value, string = :match.PostCode.value}
+:PC.Pt_PostCode = {rule = Pt_PostCode, value = :match.PostCode.value, string = :match.PostCode.value}
 
 
 Rule: Pt_PostCode2
@@ -24,11 +24,11 @@ Priority: 99
         
         {Date_of_Birth}
         {NHS_number}
-        {PostCode}
+       ({PostCode}):PC
 		
         
 ):match
 -->
-:match.Pt_PostCode = {rule = Pt_PostCode2, value = :match.PostCode.value, string = :match.PostCode.value}
+:PC.Pt_PostCode = {rule = Pt_PostCode2, value = :match.PostCode.value, string = :match.PostCode.value}
 
 
