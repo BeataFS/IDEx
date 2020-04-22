@@ -6,12 +6,12 @@ Options: control=all
 Rule: removeUselessLookups
 
 (
-    ( {Lookup.majorType == person_first, Lookup.minorType == male, Lookup.string == "DOB"})
+    ( {Lookup.majorType == person_first, Lookup.minorType == male, Lookup.string == "DOB"}):a
     
 ):match
 -->
-:umls { 
-  inputAS.removeAll();
+:a { 
+  inputAS.removeAll(aAnnots);
 }
 
 

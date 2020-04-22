@@ -11,3 +11,7 @@ child:value=general
 she:value=female
 he:value=male
 him:value=male
+He:value=male
+She:value=female
+Her:value=female
+His:value=male
