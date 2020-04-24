@@ -1,5 +1,5 @@
 Phase:	Gender
-Input: Token Lookup2 FullName TitleName SpaceToken Sentence
+Input: Token Lookup2 FullName TitleName Sentence
 Options: control = Appelt
 
 /* 
@@ -8,10 +8,10 @@ Options: control = Appelt
 
 
 Rule: Pt_Gender
+Priority: 100
 (
  ({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
   {Token.kind == punctuation}
-  ({SpaceToken})?
   {FullName}
 ):match
 -->
@@ -19,20 +19,20 @@ Rule: Pt_Gender
 
 
 Rule: Pt_Gender2
+Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
-	 {Token.kind == punctuation}
-	({SpaceToken})?
+	({Token.kind == punctuation})?
 	{TitleName}
 ):match
 -->
 :match.Pt_Gender = {rule = Pt_Gender2, value = :match.TitleName.value}
 
 Rule: Pt_Gender3
+Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
-	 {Token.kind == punctuation}
-	({SpaceToken})?
+	({Token.kind == punctuation})?
 	({Lookup2.majorType == person, Lookup2.minorType == female}):a
 ):match
 -->
