@@ -47,3 +47,28 @@ Rule: DateBio1
 
 
 
+
+Rule: DateBio2
+
+(
+	({Numeric.value == "" , Numeric.rule == "Ordinals"}):day
+	({Lookup2.majorType == "time" , Lookup2.minorType == "date"}):month
+	({Numeric.rule == "Numerals"}):year			
+):match
+-->
+:match.DateBio = {rule = "DateBio2" , DateBio =  :match@string, day = :day@string, month = :month@string, year = :year@string}
+
+
+Rule: DateBio3
+
+(
+	({Lookup2.majorType == "Numerals", Lookup2.minorType == "date_term"}):day
+	({Lookup2.majorType == "Numerals" , Lookup2.minorType == "date_term"}):month
+	({Numeric.rule == "Numerals"}):year			
+):match
+-->
+:match.DateBio = {rule = "DateBio3", DateBio =  :match@string, day = :day.Lookup2.value, month = :month.Lookup2.month, year = :year@string}
+
+
+
+
