@@ -25,7 +25,7 @@ Priority: 100
         ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
         {Token.kind == punctuation}
         ({Token.category == NN, Token.length == 1})?
-        {Numeric.rule == Numerals, Numeric.length <8}):a
+        {Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo2, value = :match.Numeric.value, string = :a@string}
@@ -66,7 +66,7 @@ Priority: 99
         {Token.kind == punctuation,Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string !="("})
-		{Numeric.rule == Numerals, Numeric.length <8}):a
+		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo5, value = :match.Numeric.value, string = :a@string}
@@ -80,7 +80,7 @@ Priority: 98
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string == "/"})?
-		{Numeric.rule == Numerals, Numeric.length <8}):a
+		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo6, value = :match.Number.value, string = :a@string}
