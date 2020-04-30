@@ -659,14 +659,14 @@
               <localMap/>
             </runtimeParams>
             <resourceType>gate.creole.Transducer</resourceType>
-            <resourceName>JAPE:NHSNo</resourceName>
+            <resourceName>JAPE:HospNo</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
                   <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$resources/jape/nhs1.jape</uriString>
+                    <uriString>$relpath$resources/jape/HospNo.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -687,14 +687,14 @@
               <localMap/>
             </runtimeParams>
             <resourceType>gate.creole.Transducer</resourceType>
-            <resourceName>JAPE:HospNo</resourceName>
+            <resourceName>JAPE:NHSNo</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
                   <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$resources/jape/HospNo.jape</uriString>
+                    <uriString>$relpath$resources/jape/nhs1.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
