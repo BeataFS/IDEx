@@ -12,10 +12,10 @@ Priority: 100
 (
  ({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
   {Token.kind == punctuation}
-  {FullName}
+  ({FullName}):item
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender, value = :match.FullName.value}
+:match.Pt_Gender = {rule = Pt_Gender, value = :item.FullName.value}
 
 
 Rule: Pt_Gender2
@@ -23,17 +23,17 @@ Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
 	({Token.kind == punctuation})?
-	{TitleName}
+	({TitleName}):item
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender2, value = :match.TitleName.value}
+:item.Pt_Gender = {rule = Pt_Gender2, value = :item.TitleName.value}
 
 Rule: Pt_Gender3
 Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
 	({Token.kind == punctuation})?
-	({Lookup2.majorType == person, Lookup2.minorType == female}):a
+	({Lookup2.majorType == person, Lookup2.minorType == female})
 ):match
 -->
 :match.Pt_Gender = {rule = Pt_Gender3, value = female}

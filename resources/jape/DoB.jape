@@ -20,3 +20,16 @@ Priority: 100
 :match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value, string = :a@string}
 
 
+Rule: DoB_3
+Priority: 100
+(
+	({Lookup2.majorType == "person", Lookup2.minorType == "date_term"}
+	({SpaceToken.kind == "space"})? 
+	({Token.kind == "punctuation"})?
+	({SpaceToken.kind == "space"})? 
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	{DateBio}):a	
+):match
+-->
+:match.Date_of_Birth = { rule = DoB_3, value = :match.DateBio.value, string = :a@string}
+
