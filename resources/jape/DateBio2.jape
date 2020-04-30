@@ -1,0 +1,38 @@
+Phase: Dates
+Input: Lookup2 Numeric
+Options: control=all
+
+ Rule: DateBio2
+
+(
+	({Lookup2.majorType == "Numerals" , Lookup2.minorType == "Ordinals"}):day
+	({Lookup2.majorType == "time" , Lookup2.minorType == "date"}):month
+	({Numeric.rule == "Numerals"}):year			
+):match
+-->
+:match.DateBio = {rule = "DateBio2" , value = :match@string, DateBio = :match@string,
+DayDate = :day.Numeric.value, MonthDate = :match.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
+
+
+
+Rule: DateBio3
+
+(
+	({Numeric.rule == "Numerals", Numeric.value <= 31}):day
+	({Lookup2.majorType == "time" , Lookup2.minorType == "date"}):month
+	({Numeric.rule == "Numerals"}):year			
+):match
+-->
+:match.DateBio = {rule = "DateBio3" , value = :match@string, DateBio = :match@string,
+DayDate = :day.Numeric.value, MonthDate = :match.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
+
+Rule: DateBio4
+
+(
+	({Lookup2.majorType == "time" , Lookup2.minorType == "date"}):month
+	({Lookup2.majorType == "Numerals" , Lookup2.minorType == Ordinals}):day
+	({Numeric.rule == "Numerals"}):year			
+):match
+-->
+:match.DateBio = {rule = "DateBio4" , value = :match@string, DateBio =  :match@string,
+DayDate = :day.Numeric.value, MonthDate = :month.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
