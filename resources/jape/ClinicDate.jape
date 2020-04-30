@@ -1,0 +1,69 @@
+Phase: Dates
+Input: Lookup2 Token SpaceToken DateBio
+Options: control=once
+
+/*
+ * Get Clinic Date
+ */
+
+ Rule: ClinicDate
+ Priority: 100
+(
+	({Lookup2.majorType == "ClinicDate", Lookup2.minorType == "Date"}
+	({SpaceToken.kind == "space"})
+	({Lookup2.majorType == "time", Lookup2.minorType == "date"})
+	({Token.kind == "punctuation"})?
+	({SpaceToken.kind == "space"})?
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	{DateBio}):a
+):match
+-->
+:match.ClinicDate = { rule = ClinicDate, value = :match.DateBio@string, string = :a@string, DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate}
+
+
+
+Rule:ClinicDate2
+Priority: 99
+(
+	({Lookup2.majorType == "ClinicDate", Lookup2.minorType == "Date"}
+	({Token.kind == "punctuation"})?
+	({SpaceToken.kind == "space"})[0,4]
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	{DateBio}):a
+):match
+-->
+:match.ClinicDate = { rule = ClinicDate2, value = :match.DateBio@string, string = :a@string, DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate}
+
+
+
+
+/*
+* No longer need to use 'Date' as input, changed DateBio to collect more date types
+*
+*
+*Rule:ClinicDate3
+*Priority: 98
+*(
+*	({Lookup2.majorType == "organization", Lookup2.minorType == "health_terms"})|({Lookup2.majorType == "time", Lookup2.minorType == "date"}
+*	({Token.kind == "punctuation"})?
+*	({SpaceToken.kind == "space"})?
+*	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+*	{Date}):a
+*):match
+*-->
+*:match.ClinicDate = {rule = ClinicDate3, value = :match.Date.value, string = :a@string}
+*
+*
+*Rule:ClinicDate4
+*Priority: 98
+*(
+*	({Lookup2.majorType == "time", Lookup2.minorType == "date"}
+*	({Token.kind == "punctuation"})?
+*	({SpaceToken.kind == "space"})?
+*	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+*	{Date}):a
+*):match
+*-->
+*:match.ClinicDate = {rule = ClinicDate4, value = :match.Date.value, string = :a@string}
+*
+*/
