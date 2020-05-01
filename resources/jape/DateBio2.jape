@@ -11,7 +11,7 @@ Options: control=all
 ):match
 -->
 :match.DateBio = {rule = "DateBio2" , value = :match@string, DateBio = :match@string,
-DayDate = :day.Numeric.value, MonthDate = :match.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
+DayDate = :day.Lookup2.value, MonthDate = :match.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
 
 
 
@@ -35,4 +35,4 @@ Rule: DateBio4
 ):match
 -->
 :match.DateBio = {rule = "DateBio4" , value = :match@string, DateBio =  :match@string,
-DayDate = :day.Numeric.value, MonthDate = :month.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
+DayDate = :day.Lookup2.value, MonthDate = :month.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
