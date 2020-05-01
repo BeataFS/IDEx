@@ -1,0 +1,25 @@
+Imports: {import static gate.Utils.*; }
+Phase: Plurals
+Input: DateBio
+Options: control=brill
+
+Rule:DateFormat
+Priority: 100
+(
+{DateBio}
+):tag
+-->
+:tag{
+    Annotation datebio = bindings.get("tag").iterator().next();
+    String day2 = datebio.getFeatures().get("DayDate").toString();
+    String month2 = datebio.getFeatures().get("MonthDate").toString();
+    String year2 = datebio.getFeatures().get("YearDate").toString();
+    Integer day1 = Integer.valueOf(day2);
+    Integer month1 = Integer.valueOf(month2);
+    Integer year1 = Integer.valueOf(year2);
+    String day = (day1 < 10 && day1 > 0) ? "0"+ day1.toString() :day1.toString();//add 0 to start of string if day has length of 1 (convert 1-9 into 01-09)
+    String month = (month1 < 10 && month1 > 0) ? "0"+ month1.toString(): month1.toString();//add 0 to start of string if month has length 1 (convert 1-9 into 01-09)
+    String year = (year1 < 100 && year1 > 0) ? ((year1>=25) ? "19"+year1.toString() : "20"+year1.toString()) : year1.toString();
+    String date = year + "-" + month + "-" + day;//get Date in format YYYY-MM-DD
+    getOnlyAnn(tagAnnots).getFeatures().put("Date",date);// add annotation of Date with string Date as the value
+}
