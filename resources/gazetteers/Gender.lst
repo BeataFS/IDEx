@@ -1,8 +1,9 @@
 Sex:=gender
+Gender:=gender
 Female:value=female
 female:value=female
 F:value=female
 Male:value=male
-male:vale=male
-M:vale=male
-Gender:=gender
+male:value=male
+M:value=male
+
