@@ -1,0 +1,39 @@
+Phase: GenderFilter
+Input:  Pt_Gender1  GenderInText Gender
+Options: control=once
+
+Rule: PT_Gender1Filter
+
+(
+
+	(
+	{Pt_Gender1}
+	)
+
+):match
+-->
+:match.Pt_Gender = {rule = :match.PT_Gender1.rule, value = :match.Pt_Gender1.value}
+
+Rule: GenderInTextFilter
+
+(
+
+	(
+	{GenderInText}
+	)
+
+):match
+-->
+:match.Pt_Gender = {rule = :match.GenderInText.rule, value = :match.GenderInText.value}
+
+Rule: GenderFilter
+
+(
+
+	(
+	{Gender}
+	)
+
+):match
+-->
+:match.Pt_Gender = {rule = :match.Gender.rule, value = :match.Gender.value}

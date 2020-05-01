@@ -1,9 +1,10 @@
 Phase:	Gender
-Input: Token Lookup2 FullName TitleName Sentence
+Input: Token Lookup2 FullName TitleName Sentence Person
 Options: control = Appelt
 
 /* 
-  * Patient gender based on full name and full name and title in the reference part of  clinic letter
+  * Patient gender based on full name and full 
+  name and title in the reference part of  clinic letter
 */
 
 
@@ -15,7 +16,7 @@ Priority: 100
   ({FullName}):item
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender, value = :item.FullName.value}
+:match.Pt_Gender1 = {rule = Pt_Gender, value = :item.FullName.value}
 
 
 Rule: Pt_Gender2
@@ -26,7 +27,7 @@ Priority: 100
 	({TitleName}):item
 ):match
 -->
-:item.Pt_Gender = {rule = Pt_Gender2, value = :item.TitleName.value}
+:item.Pt_Gender1 = {rule = Pt_Gender2, value = :item.TitleName.value}
 
 Rule: Pt_Gender3
 Priority: 100
@@ -36,5 +37,15 @@ Priority: 100
 	({Lookup2.majorType == person, Lookup2.minorType == female})
 ):match
 -->
-:match.Pt_Gender = {rule = Pt_Gender3, value = female}
+:match.Pt_Gender1 = {rule = Pt_Gender3, value = female}
 
+Rule: Pt_Gender4
+Priority: 100
+(
+	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
+	({Token.kind == punctuation})?
+	({Lookup2.majorType == title})
+	({Person.kind == fullName})
+):match
+-->
+:match.Pt_Gender1 = {rule = Pt_Gender4, value =:match.Person.gender}

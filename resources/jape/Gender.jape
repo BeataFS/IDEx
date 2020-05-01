@@ -3,7 +3,8 @@ Input: Lookup2 SpaceToken
 Options: control = First
 
 /* 
-  * Patient gender based on name within text together with health terms
+  * Patient gender based on name within text together 
+  with health terms
 */
 
 
