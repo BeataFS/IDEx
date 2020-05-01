@@ -72,39 +72,6 @@
     <collectionType>java.util.Collections$UnmodifiableSet</collectionType>
   </urlList>
   <application class="gate.util.persistence.ConditionalSerialAnalyserControllerPersistence">
-    <corpus class="gate.util.persistence.CorpusPersistence">
-      <docList>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>108902_06 05 2011.pdf.txt_00032</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>UTF8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../MSlettersTxt/test4/108902_06%2005%202011.pdf.txt</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-      </docList>
-      <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>Corpus for 108902_06 05 2011.pdf.txt_00032</resourceName>
-      <initParams class="gate.util.persistence.MapPersistence">
-        <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-        <localMap/>
-      </initParams>
-    </corpus>
     <strategiesList class="gate.util.persistence.CollectionPersistence">
       <localList>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
