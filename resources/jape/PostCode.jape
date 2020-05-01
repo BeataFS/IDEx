@@ -5,9 +5,9 @@ Options: control=appelt
 Rule: PostCode1
 
 (
-	{AlthNum}
+	({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})
 	{SpaceToken}
-	{AlthNum}
+	{AlthNum.rule == AlthNum3}
 	):match
 	
 -->

@@ -18,7 +18,9 @@ Options: control=once
 	{DateBio}):a
 ):match
 -->
-:match.ClinicDate = { rule = ClinicDate, value = :match.DateBio@string, string = :a@string, DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate}
+:match.ClinicDate = { rule = ClinicDate, value = :match.DateBio@string, string = :a@string, 
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
 
 
 
@@ -32,7 +34,9 @@ Priority: 99
 	{DateBio}):a
 ):match
 -->
-:match.ClinicDate = { rule = ClinicDate2, value = :match.DateBio@string, string = :a@string, DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate}
+:match.ClinicDate = { rule = ClinicDate2, value = :match.DateBio@string, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
 
 
 

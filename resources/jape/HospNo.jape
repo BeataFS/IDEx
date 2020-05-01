@@ -10,7 +10,7 @@ Priority: 100
 (
         ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
         {Token.kind == punctuation}
-        {AlthNum}):a
+        ({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
 		
         
 ):match
@@ -39,7 +39,7 @@ Priority: 99
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation})?
-		{AlthNum}):a
+		({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo3, value = :match.AlthNum.value, string = :a@string}

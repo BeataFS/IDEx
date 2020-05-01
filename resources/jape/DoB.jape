@@ -17,7 +17,9 @@ Priority: 100
 	{DateBio}):a	
 ):match
 -->
-:match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value, string = :a@string}
+:match.Date_of_Birth = { rule = DoB_2, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
 
 
 Rule: DoB_3
@@ -31,5 +33,7 @@ Priority: 100
 	{DateBio}):a	
 ):match
 -->
-:match.Date_of_Birth = { rule = DoB_3, value = :match.DateBio.value, string = :a@string}
+:match.Date_of_Birth = { rule = DoB_3, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
 
