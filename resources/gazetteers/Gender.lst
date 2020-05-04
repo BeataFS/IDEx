@@ -1,9 +1,9 @@
-Sex:=gender
-Gender:=gender
-Female:value=female
-female:value=female
-F:value=female
-Male:value=male
-male:value=male
-M:value=male
+Sex:Identifier=gender
+Gender:Identifier=gender
+Female:value=Female:Term=gender
+female:value=Female:Term=gender
+F:value=Female:Term=gender
+Male:value=Male:Term=gender
+male:value=Male:Term=gender
+M:value=Male:Term=gender
 

@@ -39,9 +39,10 @@ Priority: 100
 
 
 (
-	({Lookup2.majorType == Gender, Lookup2.minorType == Person})
+	({Lookup2.majorType == Gender, Lookup2.minorType == Person, Lookup2.Identifier == gender})
 	({SpaceToken})?
-	({Lookup2.majorType == Gender, Lookup2.minorType == Person}):a
+	({SpaceToken})?
+	({Lookup2.majorType == Gender, Lookup2.minorType == Person, Lookup2.Term == gender}):a
 ):match
 -->
 :match.Pt_Gender2 = {rule = GenderFromText, value =:a.Lookup2.value}
