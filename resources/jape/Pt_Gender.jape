@@ -16,7 +16,7 @@ Priority: 100
   ({FullName}):item
 ):match
 -->
-:match.Pt_Gender1 = {rule = Pt_Gender, value = :item.FullName.value}
+:match.Pt_Gender1 = {rule = Pt_Gender, Gender = :item.FullName.value}
 
 
 Rule: Pt_Gender2
@@ -27,7 +27,7 @@ Priority: 100
 	({TitleName}):item
 ):match
 -->
-:item.Pt_Gender1 = {rule = Pt_Gender2, value = :item.TitleName.value}
+:item.Pt_Gender1 = {rule = Pt_Gender2, Gender = :item.TitleName.value}
 
 Rule: Pt_Gender3
 Priority: 100
@@ -37,7 +37,7 @@ Priority: 100
 	({Lookup2.majorType == person, Lookup2.minorType == female})
 ):match
 -->
-:match.Pt_Gender1 = {rule = Pt_Gender3, value = female}
+:match.Pt_Gender1 = {rule = Pt_Gender3, Gender = Female}
 
 Rule: Pt_Gender4
 Priority: 100
@@ -48,4 +48,4 @@ Priority: 100
 	({Person.kind == fullName})
 ):match
 -->
-:match.Pt_Gender1 = {rule = Pt_Gender4, value =:match.Person.gender}
+:match.Pt_Gender1 = {rule = Pt_Gender4, Gender =:match.Person.gender}

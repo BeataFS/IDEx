@@ -12,7 +12,7 @@ Rule: PT_Gender1Filter
 
 ):match
 -->
-:match.Pt_Gender = {rule = :match.PT_Gender1.rule, value = :match.Pt_Gender1.value}
+:match.Pt_Gender = {rule = :match.PT_Gender1.rule, Gender = :match.Pt_Gender1.value}
 
 Rule: GenderInTextFilter
 
@@ -24,7 +24,7 @@ Rule: GenderInTextFilter
 
 ):match
 -->
-:match.Pt_Gender = {rule = :match.GenderInText.rule, value = :match.GenderInText.value}
+:match.Pt_Gender = {rule = :match.GenderInText.rule, Gender = :match.GenderInText.value}
 
 Rule: GenderFilter
 
@@ -36,4 +36,4 @@ Rule: GenderFilter
 
 ):match
 -->
-:match.Pt_Gender = {rule = :match.Gender.rule, value = :match.Gender.value}
+:match.Pt_Gender = {rule = :match.Gender.rule, Gender = :match.Gender.value}

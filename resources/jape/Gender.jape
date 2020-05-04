@@ -19,7 +19,7 @@ Priority: 100
 	({Lookup2.majorType == person, Lookup2.minorType == male}):a
 ):match
 -->
-:match.Pt_Gender2 = {rule = GenderFromTextm, value = male}
+:match.Pt_Gender1 = {rule = GenderFromTextm, Gender = Male}
 
 
 Rule: GenderFromTextf
@@ -32,7 +32,7 @@ Priority: 100
 	({Lookup2.majorType == person, Lookup2.minorType == female}):a
 ):match
 -->
-:match.Pt_Gender2 = {rule = GenderFromTextf, value = female}
+:match.Pt_Gender1 = {rule = GenderFromTextf, Gender = Female}
 
 Rule: GenderFromText
 Priority: 100
@@ -45,7 +45,7 @@ Priority: 100
 	({Lookup2.majorType == Gender, Lookup2.minorType == Person, Lookup2.Term == gender}):a
 ):match
 -->
-:match.Pt_Gender2 = {rule = GenderFromText, value =:a.Lookup2.value}
+:match.Pt_Gender1 = {rule = GenderFromText, Gender =:a.Lookup2.value}
 
   
 

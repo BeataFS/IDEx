@@ -15,7 +15,7 @@ Priority: 100
         
 ):match
 -->
-:match.Hosp_number = {rule = HospNo1, value = :match.AlthNum.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo1, HospitalNumber = :match.AlthNum.value, string = :a@string}
 
 
 
@@ -28,7 +28,7 @@ Priority: 100
         {Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo2, value = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo2, HospitalNumber = :match.Numeric.value, string = :a@string}
 
 Rule: HospNo3
 Priority: 99
@@ -42,7 +42,7 @@ Priority: 99
 		({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo3, value = :match.AlthNum.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo3, HospitalNumber = :match.AlthNum.value, string = :a@string}
 
 Rule: HospNo4
 Priority: 99
@@ -57,7 +57,7 @@ Priority: 99
         {Numeric.rule == Numerals, Numeric.length <8}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo4, value = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo4, HospitalNumber = :match.Numeric.value, string = :a@string}
 
 Rule: HospNo5
 Priority: 99
@@ -69,7 +69,7 @@ Priority: 99
 		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo5, value = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo5, HospitalNumber = :match.Numeric.value, string = :a@string}
 
 Rule: HospNo6
 Priority: 98
@@ -83,4 +83,4 @@ Priority: 98
 		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo6, value = :match.Number.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo6, HospitalNumber = :match.Number.value, string = :a@string}
