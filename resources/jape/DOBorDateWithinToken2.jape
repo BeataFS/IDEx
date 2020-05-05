@@ -1,0 +1,38 @@
+Imports: {import static gate.Utils.*; }
+Phase: DOBwithinToken2
+Input: Token2
+Options: control=all
+
+Rule:DOBwithinToken2
+Priority: 100
+(
+    {Token2}
+):tag
+-->
+:tag{
+Long tokenStart = tagAnnots.firstNode().getOffset();
+Long tokenEnd = tagAnnots.lastNode().getOffset();
+// check the token is longer 3 characters i.e. don't call "is", "was" a plural
+if(tokenEnd - tokenStart > 3) {
+   try{
+       String string = doc.getContent().getContent(tagAnnots.firstNode().getOffset(),
+                    tagAnnots.lastNode().getOffset()).toString().toLowerCase();
+      if(string.contains("d.o.b")) {
+       getOnlyAnn(tagAnnots).getFeatures().put("DOB","Yes");
+       getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
+       }
+      if(string.contains("dob")) {
+       getOnlyAnn(tagAnnots).getFeatures().put("DOB","Yes");
+       getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
+       }
+      if(string.contains("date")) {
+      getOnlyAnn(tagAnnots).getFeatures().put("Date", "Yes");
+      getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
+      } 
+   }
+   catch(InvalidOffsetException e) {
+    // not possible
+    throw new LuckyException("Invalid offset from annotation");
+   }
+}
+}

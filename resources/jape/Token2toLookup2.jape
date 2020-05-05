@@ -1,0 +1,23 @@
+Phase: Token2toLookup2
+Input:   Token2 Sentence Split Token
+Options: control=all
+
+//Make a longer token when there is no space (used for NameD.O.B example from MS Letters)
+
+Rule: Token2toDOB
+Priority: 100
+(
+    ({Token2.DOB == Yes})
+):match
+-->
+:match.Lookup2 = {rule = Token2toDOB, majorType = "person", minorType = "date_term", value = :match@string}
+
+Rule: Token2toDOB
+Priority: 100
+(
+    ({Token2.Date == Yes})
+    ({Token.string ==~ "[Oo]f"})
+    ({Token.string == "[Bb]irth"})
+):match
+-->
+:match.Lookup2 = {rule = Token2toDOB, majorType = "person", minorType = "date_term", value = :match@string}

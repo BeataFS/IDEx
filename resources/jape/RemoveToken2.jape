@@ -1,0 +1,13 @@
+Imports: {import static gate.Utils.*; }
+Phase: RemoveUselessToken2
+Input: Token2
+Options: control=all
+
+Rule: RemoveUselessToken2
+(
+    ({Token2.Keep != Yes})
+):match
+-->
+:match { 
+  inputAS.removeAll(matchAnnots);
+}

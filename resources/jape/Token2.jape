@@ -1,0 +1,15 @@
+Phase: Token2
+Input:   Token SpaceToken 
+Options: control=all
+
+//Make a longer token when there is no space (used for NameD.O.B example from MS Letters)
+
+Rule: Token2
+Priority: 100
+(
+    {SpaceToken}
+    ({Token})+:tokens
+	{SpaceToken}
+):match
+-->
+:tokens.Token2 = {rule = Token2, string = :tokens@string}
