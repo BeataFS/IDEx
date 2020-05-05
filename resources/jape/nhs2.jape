@@ -14,4 +14,4 @@ Priority: 100
         {Numeric.rule == Numerals}):a
 ):match
 -->
-:match.NHS_number = {rule = NHS2, value = :match.Numeric.value, string = :a@string}
+:match.NHS_number = {rule = NHS2, NHS_Number = :match.Numeric.value, string = :a@string}

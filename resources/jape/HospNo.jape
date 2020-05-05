@@ -25,10 +25,10 @@ Priority: 100
         ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
         {Token.kind == punctuation}
         ({Token.category == NN, Token.length == 1})?
-        {Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
+        {Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo2, HospitalNumber = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo2, HospitalNumber = :a.Numeric.value, string = :a@string}
 
 Rule: HospNo3
 Priority: 99
@@ -54,10 +54,10 @@ Priority: 99
 		({Token.category == NNP})?
         ({Token.kind == punctuation})?
         ({Token.category == NN, Token.length == 1})?
-        {Numeric.rule == Numerals, Numeric.length <8}):a
+        {Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo4, HospitalNumber = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo4, HospitalNumber = :a.Numeric.value, string = :a@string}
 
 Rule: HospNo5
 Priority: 99
@@ -66,10 +66,10 @@ Priority: 99
         {Token.kind == punctuation,Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string !="("})
-		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
+		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo5, HospitalNumber = :match.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo5, HospitalNumber = :a.Numeric.value, string = :a@string}
 
 Rule: HospNo6
 Priority: 98
@@ -80,7 +80,7 @@ Priority: 98
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string == "/"})?
-		{Numeric.rule == Numerals, Numeric.length <8, Numeric.length >5}):a
+		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo6, HospitalNumber = :match.Number.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
