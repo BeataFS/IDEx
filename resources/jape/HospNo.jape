@@ -4,15 +4,13 @@ Options: control=once
 
 
 
-
+// Added a little more control here - could take up to a greater length again if needed
 Rule: HospNo1
 Priority: 100
 (
-        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
-        {Token.kind == punctuation}
-        ({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
-		
-        
+    ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+    {Token.kind == punctuation}
+    ({AlthNum.rule == AlthNum1, AlthNum.length >5}|{AlthNum.rule == AlthNum2, AlthNum.length >5})):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo1, HospitalNumber = :match.AlthNum.value, string = :a@string}
@@ -30,6 +28,9 @@ Priority: 100
 -->
 :match.Hosp_number = {rule = HospNo2, HospitalNumber = :a.Numeric.value, string = :a@string}
 
+//This rule may cause problems with many hypotheticals and general structure
+//Picks up 2B/AE12 (steve ali plastic letters) as a HospNumber (AE12 as the hospnumber)
+//Control with some minimum lengths maybe (plus this example is over two lines)
 Rule: HospNo3
 Priority: 99
 (
@@ -39,10 +40,11 @@ Priority: 99
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation})?
-		({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
+		({AlthNum.rule == AlthNum1, AlthNum.length > 5}|{AlthNum.rule == AlthNum2, AlthNum.length > 5})):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo3, HospitalNumber = :match.AlthNum.value, string = :a@string}
+
 
 Rule: HospNo4
 Priority: 99
@@ -70,7 +72,7 @@ Priority: 99
 ):match
 -->
 :match.Hosp_number = {rule = HospNo5, HospitalNumber = :a.Numeric.value, string = :a@string}
-
+//Token.Category == NNP will only pick up capitalized word not. So HS/abc/HN123456 isn't picked up but HS/ABC/HN123456 will be
 Rule: HospNo6
 Priority: 98
 (
@@ -80,6 +82,20 @@ Priority: 98
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string == "/"})?
+		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+):match
+-->
+:match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
+
+//To pick up lowercase example from above
+Rule: HospNo6a
+Priority: 98
+(
+        (({Token.category == NNP, Token.kind == word, Token.length <4})
+        ({Token.kind == punctuation, Token.string == "/"})
+        {Token.category == NN, Token.kind == word, Token.length <4}
+        {Token.kind == punctuation, Token.string == "/"}
+		({Token.kind == word, Token.length < 3})
 		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
