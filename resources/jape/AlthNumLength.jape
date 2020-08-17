@@ -1,0 +1,17 @@
+Imports: {import static gate.Utils.*; }
+Phase: AlthNumLength
+Input: AlthNum
+Options: control=all
+
+Rule:AlthNumLength
+Priority: 100
+(
+    {AlthNum}
+):tag
+-->
+:tag{
+Long tokenStart = tagAnnots.firstNode().getOffset();
+Long tokenEnd = tagAnnots.lastNode().getOffset();
+Long length = tokenEnd - tokenStart;
+getOnlyAnn(tagAnnots).getFeatures().put("length", length);
+}

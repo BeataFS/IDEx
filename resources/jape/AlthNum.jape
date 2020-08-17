@@ -1,7 +1,7 @@
 Phase: Numbers
-Input: Token 
+Input: Token NewLine
 Options: control=first
-
+//Need to add some new line control to these rules
 Rule: AlthNum1
 Priority: 100
 (
