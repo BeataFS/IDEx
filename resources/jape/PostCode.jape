@@ -1,15 +1,23 @@
 Phase: PostCode
-Input: Number AlthNum SpaceToken 
+Input: Number AlthNum SpaceToken Token
 Options: control=appelt
 
 Rule: PostCode1
-
+//Need something else to pick up when no spaces - hard to be sure that this is then a PostCode (plus strange london postcode -SW1W XXX)
 (
 	({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})
-	{SpaceToken}
+	({SpaceToken})[1,2]//between one and two spaces in first half and second half of PostCode?
 	{AlthNum.rule == AlthNum3}
-	):match
-	
+):match
 -->
 :match.PostCode = { rule = PostCode1, value = :match@string}
 
+Rule: PostCode2
+//Trying to pick out when no Space between two halves of PostCode AB12CD also AB123CD
+(
+	({Token.length <3, Token.orth==allCaps})
+	({Token.length >1, Token.length <4, Token.kind==number})
+	({Token.length == 2, Token.orth==allCaps})
+):pc
+-->
+:pc.PostCode = {rule = PostCode2, value = :pc@string}
