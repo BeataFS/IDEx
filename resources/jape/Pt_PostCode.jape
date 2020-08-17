@@ -1,5 +1,5 @@
 Phase: PostCode
-Input:   Date_of_Birth PostCode NHS_number 
+Input:   Date_of_Birth PostCode NHS_number NewLine
 Options: control=once
 
 
@@ -10,6 +10,7 @@ Priority: 100
         
         
         {Date_of_Birth}
+        ({NewLine})[0,2]
         ({PostCode}):PC
 		
         
@@ -23,8 +24,10 @@ Priority: 99
 (
         
         {Date_of_Birth}
+        ({NewLine})[0,5]
         {NHS_number}
-       ({PostCode}):PC
+        ({NewLine})[0,2]
+        ({PostCode}):PC
 		
         
 ):match
