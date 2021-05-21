@@ -1,0 +1,66 @@
+Phase: Dates
+Input: Lookup2 Lookup DateBio Person
+Options: control=once
+
+Rule: LetDate
+Priority: 100
+(
+	({Lookup2.majorType == "LetterDate"}
+    ({Lookup})?
+	{DateBio}):a	
+):match
+-->
+:match.LetterDate = { rule = LetDate, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
+
+Rule: LetDate
+Priority: 99
+(
+	({DateBio}):a
+    ({Lookup2.majorType == "reference"})	
+
+):match
+-->
+:match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
+
+Rule: LetDate
+Priority: 99
+(
+	({DateBio}):a
+    ({Lookup.majorType =="greeting"})?
+    ({Lookup.majorType == "title"})	
+
+):match
+-->
+:match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
+Rule: LetDate
+Priority: 99
+(
+	({DateBio}):a
+    ({Person})	
+
+):match
+-->
+:match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
+
+Rule: LetDate
+Priority: 99
+(
+	({DateBio}):a
+    ({Lookup})?
+    ({Lookup2.majorType == "person"})	
+
+):match
+-->
+:match.LetterDate = { rule = LetDate3, value = :match.DateBio.value, string = :a@string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
+
+
