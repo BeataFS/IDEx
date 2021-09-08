@@ -1,5 +1,5 @@
 Phase: Dates
-Input: Lookup2 Lookup DateBio Person
+Input: Lookup2 Lookup DateBio Person Split
 Options: control=once
 
 Rule: LetDate
@@ -14,7 +14,7 @@ Priority: 100
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
 
-Rule: LetDate
+/*Rule: LetDate2
 Priority: 99
 (
 	({DateBio}):a
@@ -24,9 +24,9 @@ Priority: 99
 -->
 :match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
-Date = :match.DateBio.Date}
+Date = :match.DateBio.Date}*/
 
-Rule: LetDate
+Rule: LetDate3
 Priority: 99
 (
 	({DateBio}):a
@@ -35,10 +35,11 @@ Priority: 99
 
 ):match
 -->
-:match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
+:match.LetterDate = { rule = LetDate3, value = :match.DateBio.value, string = :a@string,
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
-Rule: LetDate
+
+Rule: LetDate4
 Priority: 99
 (
 	({DateBio}):a
@@ -46,11 +47,11 @@ Priority: 99
 
 ):match
 -->
-:match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
+:match.LetterDate = { rule = LetDate4, value = :match.DateBio.value, string = :a@string,
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
 
-Rule: LetDate
+Rule: LetDate5
 Priority: 99
 (
 	({DateBio}):a
@@ -59,7 +60,7 @@ Priority: 99
 
 ):match
 -->
-:match.LetterDate = { rule = LetDate3, value = :match.DateBio.value, string = :a@string,
+:match.LetterDate = { rule = LetDate5, value = :match.DateBio.value, string = :a@string,
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
 
