@@ -1,6 +1,6 @@
 Phase: Dates
 Input: Lookup2 Lookup DateBio Person Split Hosp_number NewLine
-Options: control=once
+Options: control=appelt
 
 Rule: LetDate
 Priority: 100
