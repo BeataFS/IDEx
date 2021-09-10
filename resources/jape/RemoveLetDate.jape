@@ -1,0 +1,14 @@
+Phase: RemoveLetDate
+Input:  LetterDate ClinicDate
+Options: control=all
+/*Removes letter data if it's within clinic date*/
+
+Rule: RemoveLetDate
+(   
+    ({LetterDate within ClinicDate}):item
+):match
+-->
+:item { 
+  inputAS.removeAll(itemAnnots);
+},
+:item.LetterDateRemoved = {rule = RemoveLetDate}
