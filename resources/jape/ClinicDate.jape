@@ -1,5 +1,5 @@
 Phase: Dates
-Input: Lookup2 Token SpaceToken DateBio
+Input: Lookup2 Token SpaceToken DateBio NewLine
 Options: control=once
 
 /*
@@ -38,6 +38,18 @@ Priority: 99
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
 
+Rule:ClinicDate3
+Priority: 99
+(
+	({Lookup2.majorType == "ClinicDate", Lookup2.minorType == "Date"})
+	({Token.kind == "punctuation"})?
+	({NewLine})[0,4]
+	({DateBio}):a
+):match
+-->
+:match.ClinicDate = { rule = ClinicDate3, value = :match.DateBio@string, string = :a.DateBio.string,
+DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
+Date = :match.DateBio.Date}
 
 
 
