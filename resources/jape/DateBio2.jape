@@ -1,5 +1,5 @@
 Phase: Dates
-Input: Lookup2 Numeric
+Input: Lookup2 Numeric NewLine Split Token
 Options: control=all
 
  Rule: DateBio2
