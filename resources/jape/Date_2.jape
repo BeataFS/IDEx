@@ -1,5 +1,5 @@
 Phase: Dates
-Input: Lookup2 Token SpaceToken Numeric
+Input: Lookup2 Token SpaceToken Numeric Split NewLine
 Options: control=appelt
 
 /* 
