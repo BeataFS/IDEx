@@ -31,7 +31,7 @@ Priority: 99
 (
 	({DateBio}):a
     ({Lookup.majorType =="greeting"})?
-    ({Lookup.majorType == "title"})	
+    ({Lookup2.majorType == "title"})	
 
 ):match
 -->
