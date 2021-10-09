@@ -1,12 +1,13 @@
 Phase: Dates
-Input: Lookup2 Lookup DateBio Person Split Hosp_number NewLine
-Options: control=appelt
+Input: Lookup2 Lookup DateBio Person Hosp_number 
+
+Options: control=once
 
 Rule: LetDate
 Priority: 100
 (
 	({Lookup2.majorType == "LetterDate"}
-    ({Lookup})?
+    ({Lookup.majorType != "hospital"})?
 	{DateBio}):a	
 ):match
 -->
@@ -14,7 +15,7 @@ Priority: 100
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
 Date = :match.DateBio.Date}
 
-/*Rule: LetDate2
+Rule: LetDate2
 Priority: 99
 (
 	({DateBio}):a
@@ -24,14 +25,14 @@ Priority: 99
 -->
 :match.LetterDate = { rule = LetDate2, value = :match.DateBio.value, string = :a@string,
 DayDate = :match.DateBio@DayDate, MonthDate = :match.DateBio@MonthDate, YearDate = :match.DateBio@YearDate,
-Date = :match.DateBio.Date}*/
+Date = :match.DateBio.Date}
 
 Rule: LetDate3
 Priority: 99
 (
 	({DateBio}):a
-    ({Lookup.majorType =="greeting"})?
-    ({Lookup2.majorType == "title"})	
+    ({Lookup.majorType == "greeting"})?
+    ({Lookup.majorType == "title"})	
 
 ):match
 -->
@@ -44,7 +45,6 @@ Rule: LetDate5
 Priority: 99
 (
     {Hosp_number}
-    ({NewLine})?
 	({DateBio}):item
     	
 
@@ -55,3 +55,16 @@ DayDate = :item.DateBio.DayDate, MonthDate = :item.DateBio.MonthDate, YearDate =
 Date = :item.DateBio.Date}
 
 
+Rule: LetDate6
+Priority: 99
+(
+    ({DateBio}):item
+    {Hosp_number}
+	
+    	
+
+):match
+-->
+:item.LetterDate = { rule = LetDate6, value = :item.DateBio.value, string = :item.DateBio.string,
+DayDate = :item.DateBio.DayDate, MonthDate = :item.DateBio.MonthDate, YearDate = :item.DateBio.YearDate,
+Date = :item.DateBio.Date}
