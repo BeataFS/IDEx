@@ -1,5 +1,5 @@
 Phase: Dates
-Input: Lookup2 Numeric NewLine Split Token
+Input: Lookup2 Numeric NewLine Split
 Options: control=all
 
  Rule: DateBio2
@@ -36,3 +36,4 @@ Rule: DateBio4
 -->
 :match.DateBio = {rule = "DateBio4" , value = :match@string, DateBio =  :match@string,
 DayDate = :day.Lookup2.value, MonthDate = :month.Lookup2.month, YearDate = :year.Numeric.value, string = :match@string}
+
