@@ -1,13 +1,15 @@
 Phase: Dates
+/* Input selects specific tokens from gazetteers to be used in the rules*/
 Input: Lookup2 Lookup DateBio Person Hosp_number 
 
-Options: control=once
+Options: control=once  /* once one matching annotation is found, stoop annotating */
 
+/* Letter data that follows a lookup which is not a hospital  */
 Rule: LetDate
 Priority: 100
 (
 	({Lookup2.majorType == "LetterDate"}
-    ({Lookup.majorType != "hospital"})?
+    ({Lookup2.majorType != "hospital"})?
 	{DateBio}):a	
 ):match
 -->
