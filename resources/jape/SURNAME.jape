@@ -1,5 +1,5 @@
 Phase:	Person
-Input: SpaceToken Pt_Forename Lookup2 Token Sentence
+Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth
 Options: control = Appelt
 
 Macro: DBS //macro for double barrel surname
@@ -16,10 +16,9 @@ Priority: 100
 
 (
     {Pt_Forename}
-    ({SpaceToken})
     ({Lookup2.majorType == person})?
-    ({SpaceToken})?
-    (({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })):a
+    (({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
+    |({Token.orth == upperInitial, Token.category == NN })):a
    
 ):match
 -->
@@ -31,10 +30,8 @@ Priority: 100
 
 (
     {Pt_Forename}
-    ({SpaceToken})
     ({Lookup2.majorType == person})?
-    ({SpaceToken})?
-    (DBS):a
+    ({DBS}):a
    
 ):match
 -->
