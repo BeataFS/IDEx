@@ -1,0 +1,28 @@
+Phase:	Person
+Input: Lookup2 Lookup Sentence
+Options: control = Appelt
+
+Rule: ForeName1
+Priority: 100
+
+(
+    ({Lookup2.majorType == reference})
+    ({Lookup2.majorType == title})?
+    ({Lookup2.majorType == person_first}):a
+   
+):match
+-->
+:match.Pt_Forename = {rule = ForeName1, first_name = :a@string} 
+
+Rule: ForeName2
+Priority: 90
+
+(
+    {Lookup2.Term == Opening}
+    ({Lookup.majorType == title})
+    {Lookup}
+    ({Lookup2.majorType == person_first}):a
+   
+):match
+-->
+:match.Pt_Forename = {rule = ForeName2, first_name = :a@string} 
