@@ -14,3 +14,5 @@ ClinicDate.lst:ClinicDate:Date::Lookup2
 Gender.lst:Gender:Person::Lookup2
 letdate.lst:LetterDate:OtherDates::Lookup2
 care.lst:hospital:service::Lookup2
+greeting.lst:letter:section::Lookup2
+organizations.lst:service:::Lookup2

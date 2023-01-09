@@ -1,0 +1,41 @@
+Phase:	Person
+Input: SpaceToken Pt_Forename Lookup2 Token Sentence
+Options: control = Appelt
+
+Macro: DBS //macro for double barrel surname
+
+((({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
+ ({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
+
+)*
+)
+
+
+Rule: Surname1
+Priority: 100
+
+(
+    {Pt_Forename}
+    ({SpaceToken})
+    ({Lookup2.majorType == person})?
+    ({SpaceToken})?
+    (({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })):a
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname1, surname = :a@string} 
+
+
+Rule: Surname2
+Priority: 100
+
+(
+    {Pt_Forename}
+    ({SpaceToken})
+    ({Lookup2.majorType == person})?
+    ({SpaceToken})?
+    (DBS):a
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname2, surname = :a@string}
