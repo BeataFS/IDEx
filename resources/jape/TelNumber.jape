@@ -1,0 +1,15 @@
+Phase:	Telephone
+Input: Lookup Numeric
+Options: control = Appelt
+
+Rule: TelNo1
+Priority: 100
+
+(
+    ({Lookup.majorType == phone_prefix})
+    (({Numeric})[0,2]):a
+    
+   
+):match
+-->
+:match.TelNumber = {rule = TelNo1, TelNumber = :a@string} 

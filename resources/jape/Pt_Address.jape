@@ -1,0 +1,43 @@
+Phase:	Address
+Input: Date_of_Birth Token Sentence NHS_number Hosp_number TelNumber Pt_PostCode 
+Options: control = Appelt
+
+
+Rule: Address1
+Priority: 100
+
+(
+    ({Date_of_Birth})
+    ({Token.kind == punctuation})
+    ({Token.kind == punctuation})?
+    ({NHS_number})?
+    ({Token.kind == punctuation})?
+    ({TelNumber})?
+    ({Token.kind == punctuation})?
+    (({Token})*):a
+    ({Pt_PostCode})
+   
+):match
+-->
+:match.Pt_Address = {rule = Address1, Address_1 = :a@string} 
+
+
+Rule: Address2
+Priority: 80
+
+(
+    ({Date_of_Birth})
+    ({Token.kind == punctuation})?
+    ({Token.kind == punctuation})?
+    ({NHS_number})?
+    ({Token.kind == punctuation})?
+    ({Hosp_number})?
+    ({Token.kind == punctuation})?
+    ({TelNumber})?
+    ({Token.kind == punctuation})?
+    (({Token})*):a
+    ({Pt_PostCode})
+   
+):match
+-->
+:match.Pt_Address = {rule = Address2, Address_1 = :a@string} 
