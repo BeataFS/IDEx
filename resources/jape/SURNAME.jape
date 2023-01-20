@@ -16,7 +16,7 @@ Priority: 100
 
 (
     {Pt_Forename}
-    ({Lookup2.majorType == person})?
+    ({Lookup2.majorType == person_first})?
     (({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
     |({Token.orth == upperInitial, Token.category == NN })):a
    
@@ -30,7 +30,7 @@ Priority: 100
 
 (
     {Pt_Forename}
-    ({Lookup2.majorType == person})?
+    ({Lookup2.majorType == person_first})?
     ({DBS}):a
    
 ):match
