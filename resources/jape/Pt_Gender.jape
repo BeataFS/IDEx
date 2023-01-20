@@ -34,7 +34,7 @@ Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == ref_term})
 	({Token.kind == punctuation})?
-	({Lookup2.majorType == person, Lookup2.minorType == female})
+	({Lookup2.majorType == person_first, Lookup2.minorType == female})
 ):match
 -->
 :match.Pt_Gender1 = {rule = Pt_Gender3, Gender = Female}
