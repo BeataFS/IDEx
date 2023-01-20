@@ -16,7 +16,7 @@ Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
 	({SpaceToken})?
-	({Lookup2.majorType == person, Lookup2.minorType == male}):a
+	({Lookup2.majorType == person_first, Lookup2.minorType == male}):a
 ):match
 -->
 :match.Pt_Gender1 = {rule = GenderFromTextm, Gender = Male}
@@ -29,7 +29,7 @@ Priority: 100
 (
 	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
 	({SpaceToken})?
-	({Lookup2.majorType == person, Lookup2.minorType == female}):a
+	({Lookup2.majorType == person_first, Lookup2.minorType == female}):a
 ):match
 -->
 :match.Pt_Gender1 = {rule = GenderFromTextf, Gender = Female}
