@@ -16,3 +16,4 @@ letdate.lst:LetterDate:OtherDates::Lookup2
 care.lst:hospital:service::Lookup2
 greeting.lst:letter:section::Lookup2
 organizations.lst:service:::Lookup2
+address.lst:address:latter::Lookup2
