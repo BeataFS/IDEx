@@ -1,0 +1,21 @@
+Phase: Letter 
+Input:  Token Lookup2 Lookup Sentence  NewLine SpaceToken
+Options: control=Appelt
+/*should pick up Dear Dr...*/ 
+ 
+Rule: Dear1
+
+Priority: 100
+
+(
+    (({Lookup2.Term == Opening})
+    {SpaceToken}
+    ({Lookup.majorType == title})?
+    ({SpaceToken})?
+    ({Token.category == NNP})
+    ({Token.category == NNP})?):a
+    
+   
+):match
+-->
+:match.Opening = {rule = Dear1, OpeningPhrase = :a@string} 
