@@ -1,38 +1,124 @@
 Phase:	Person
-Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth
+Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth SpaceToken
 Options: control = Appelt
 
-Macro: DBS //macro for double barrel surname
-
-((({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
- ({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
-
-)*
-)
 
 
-Rule: Surname1
+
+
+Rule: Surname0  // when surname is like a First nem e.g. Lewis and there is no other name after it
 Priority: 100
 
 (
     {Pt_Forename}
-    ({Lookup2.majorType == person_first})?
-    (({Token.orth == upperInitial, Token.category == NNP })|({Token.orth == allCaps, Token.category == NNP })
-    |({Token.orth == upperInitial, Token.category == NN })):a
+    {SpaceToken}
+    ({Date_of_Birth})
+    
    
 ):match
 -->
-:match.Pt_Surname = {rule = Surname1, surname = :a@string} 
+:match.Pt_Surname = {rule = Surname0, surname = :match.Pt_Forename.middle_name}
 
 
-Rule: Surname2
+
+Rule: Surname1  /* deals with the double-barrelled surnames */
 Priority: 100
 
 (
     {Pt_Forename}
-    ({Lookup2.majorType == person_first})?
-    ({DBS}):a
+    {SpaceToken}
+    (({Token.orth == upperInitial, Token.category == NNP, Token.length > 2 }|{Token.orth == allCaps, Token.category == NNP, Token.length > 2})
+    ({Token.orth == upperInitial, Token.category == NNP ,Token.length > 2}|{Token.orth == allCaps, Token.category == NNP, Token.length > 2 })):a
+
+
    
 ):match
 -->
-:match.Pt_Surname = {rule = Surname2, surname = :a@string}
+:match.Pt_Surname = {rule = Surname1, surname = :a@string}
+
+
+  Rule: Surname2  // two names before surneme
+Priority: 100
+
+(
+    {Pt_Forename}
+    ({SpaceToken})
+    ({Lookup2.majorType == person_first})
+    ({SpaceToken})
+    (({Token.orth == upperInitial, Token.category == NNP,  Token.length >2})|({Token.orth == allCaps, Token.category == NNP, Token.length >2 })
+    |({Token.orth == upperInitial, Token.category == NN, Token.length >2 })):a
+    ({SpaceToken})?
+    ({Token.kind == punctuation})?
+    ({SpaceToken})?
+   ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
+):match
+-->
+:match.Pt_Surname = {rule = Surname2, surname = :a@string} 
+
+Rule: Surname3
+Priority: 90
+
+(
+    {Pt_Forename}
+    ({SpaceToken})
+    ({Token.orth == upperInitial})?
+    ({SpaceToken})?
+    ({Token.orth == upperInitial}|{Token.orth == allCaps, Token.category == NNP, Token.length >2 }):a
+    ({SpaceToken})
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname3, surname = :a@string} 
+
+
+
+Rule: Surname4
+Priority: 90
+
+(
+    {Pt_Forename}
+    {SpaceToken}
+    ({Token.length == 1, Token.orth == upperInitial})?
+    ({SpaceToken})?
+    (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
+    |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
+    ({SpaceToken})+
+   {Date_of_Birth}
+):match
+-->
+:match.Pt_Surname = {rule = Surname4, surname = :a@string} 
+
+
+Rule: Surname5
+Priority: 90
+
+(
+    {Pt_Forename}
+    {SpaceToken}
+    ({Lookup2.majorType == person_first})
+    ({SpaceToken})
+    ({Lookup2.majorType == person_first})
+    ({SpaceToken})
+    (({Token.orth == upperInitial, Token.category == NNP,  Token.length >2})|({Token.orth == allCaps, Token.category == NNP, Token.length >2 })
+    |({Token.orth == upperInitial, Token.category == NN, Token.length >2 })):a
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname5, surname = :a@string} 
+
+
+Rule: Surname6
+Priority: 90
+
+(
+    {Pt_Forename}
+    ({SpaceToken})
+    (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
+    |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
+    ({SpaceToken})?
+    ({Token.kind == punctuation})?
+    ({SpaceToken})+
+   ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
+):match
+-->
+:match.Pt_Surname = {rule = Surname6, surname = :a@string} 

@@ -1,28 +1,41 @@
 Phase:	Person
-Input: Lookup2 Lookup Sentence
+Input: Lookup2 Lookup Sentence Opening
 Options: control = Appelt
 
 Rule: ForeName1
 Priority: 100
 
-(
+( {Opening}
     ({Lookup2.majorType == reference})
     ({Lookup2.majorType == title})?
     ({Lookup2.majorType == person_first}):a
-   
+   (({Lookup2.majorType == person_first})?):b
 ):match
 -->
-:match.Pt_Forename = {rule = ForeName1, first_name = :a@string} 
+:match.Pt_Forename = {rule = ForeName1, first_name = :a@string , middle_name = :b@string} 
 
 Rule: ForeName2
 Priority: 90
 
 (
-    {Lookup2.Term == Opening}
-    ({Lookup.majorType == title})
-    {Lookup}
-    ({Lookup2.majorType == person_first}):a
+    {Opening}
+    ({Lookup.majorType == title})?
+    ({Lookup})?
+   ({Lookup2.majorType == person_first}):a
+   (({Lookup2.majorType == person_first})?):b
    
 ):match
 -->
-:match.Pt_Forename = {rule = ForeName2, first_name = :a@string} 
+:match.Pt_Forename = {rule = ForeName2, first_name = :a@string , middle_name = :b@string} 
+
+
+Rule: ForeName3 // when there is no opening phrase
+Priority: 90
+( 
+    ({Lookup2.majorType == reference})
+    ({Lookup2.majorType == title})?
+    ({Lookup2.majorType == person_first}):a
+   (({Lookup2.majorType == person_first})?):b
+):match
+-->
+:match.Pt_Forename = {rule = ForeName3, first_name = :a@string , middle_name = :b@string} 
