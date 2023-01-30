@@ -10,6 +10,7 @@ Priority: 100
     ({Lookup2.majorType == title})?
     ({Lookup2.majorType == person_first}):a
    (({Lookup2.majorType == person_first})?):b
+   
 ):match
 -->
 :match.Pt_Forename = {rule = ForeName1, first_name = :a@string , middle_name = :b@string} 

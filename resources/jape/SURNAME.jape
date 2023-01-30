@@ -1,5 +1,5 @@
 Phase:	Person
-Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth SpaceToken
+Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth 
 Options: control = Appelt
 
 
@@ -11,7 +11,7 @@ Priority: 100
 
 (
     {Pt_Forename}
-    {SpaceToken}
+    ({Token.kind == punctuation})?
     ({Date_of_Birth})
     
    
@@ -26,10 +26,9 @@ Priority: 100
 
 (
     {Pt_Forename}
-    {SpaceToken}
-    (({Token.orth == upperInitial, Token.category == NNP, Token.length > 2 }|{Token.orth == allCaps, Token.category == NNP, Token.length > 2})
-    ({Token.orth == upperInitial, Token.category == NNP ,Token.length > 2}|{Token.orth == allCaps, Token.category == NNP, Token.length > 2 })):a
-
+    (({Token.orth == upperInitial, Token.category == NNP, Token.length > 2 }|{Token.orth == allCaps, Token.category == NNP, Token.string != "NHS", Token.length > 2})
+    ({Token.orth == upperInitial, Token.category == NNP ,Token.length > 2}|{Token.orth == allCaps, Token.category == NNP,Token.string != "NHS", Token.length > 2 })):a
+    
 
    
 ):match
@@ -37,20 +36,16 @@ Priority: 100
 :match.Pt_Surname = {rule = Surname1, surname = :a@string}
 
 
-  Rule: Surname2  // two names before surneme
+  Rule: Surname2  // two names before surname or Address: 
 Priority: 100
 
 (
     {Pt_Forename}
-    ({SpaceToken})
-    ({Lookup2.majorType == person_first})
-    ({SpaceToken})
+    ({Lookup2.majorType == person_first}|{Lookup2.majorType == address})
     (({Token.orth == upperInitial, Token.category == NNP,  Token.length >2})|({Token.orth == allCaps, Token.category == NNP, Token.length >2 })
     |({Token.orth == upperInitial, Token.category == NN, Token.length >2 })):a
-    ({SpaceToken})?
     ({Token.kind == punctuation})?
-    ({SpaceToken})?
-   ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
+    ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
 ):match
 -->
 :match.Pt_Surname = {rule = Surname2, surname = :a@string} 
@@ -60,12 +55,10 @@ Priority: 90
 
 (
     {Pt_Forename}
-    ({SpaceToken})
-    ({Token.orth == upperInitial})?
-    ({SpaceToken})?
-    ({Token.orth == upperInitial}|{Token.orth == allCaps, Token.category == NNP, Token.length >2 }):a
-    ({SpaceToken})
-   
+    ({Token.orth == upperInitial}|{Token.orth == allCaps, Token.category == NNP, Token.length >2 }):a 
+    ({Token.kind == punctuation})?
+   ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
+
 ):match
 -->
 :match.Pt_Surname = {rule = Surname3, surname = :a@string} 
@@ -76,13 +69,12 @@ Rule: Surname4
 Priority: 90
 
 (
-    {Pt_Forename}
-    {SpaceToken}
-    ({Token.length == 1, Token.orth == upperInitial})?
-    ({SpaceToken})?
+    {Pt_Forename} 
+    ({Token.length == 1, Token.orth == upperInitial})? 
+    ({Token.orth == upperInitial})?
     (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
     |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
-    ({SpaceToken})+
+   ({Token.kind == number})?
    {Date_of_Birth}
 ):match
 -->
@@ -94,11 +86,8 @@ Priority: 90
 
 (
     {Pt_Forename}
-    {SpaceToken}
     ({Lookup2.majorType == person_first})
-    ({SpaceToken})
     ({Lookup2.majorType == person_first})
-    ({SpaceToken})
     (({Token.orth == upperInitial, Token.category == NNP,  Token.length >2})|({Token.orth == allCaps, Token.category == NNP, Token.length >2 })
     |({Token.orth == upperInitial, Token.category == NN, Token.length >2 })):a
    
@@ -112,13 +101,26 @@ Priority: 90
 
 (
     {Pt_Forename}
-    ({SpaceToken})
+    
     (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
-    |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
-    ({SpaceToken})?
+    |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a  
     ({Token.kind == punctuation})?
-    ({SpaceToken})+
    ({Lookup2.minorType == date_term} | {Lookup2.minorType == health_term })
 ):match
 -->
 :match.Pt_Surname = {rule = Surname6, surname = :a@string} 
+
+Rule: Surname7  //when there is no DoB (rare) but a house number
+Priority: 80
+
+(
+    {Pt_Forename} 
+    ({Token.length == 1, Token.orth == upperInitial})? 
+    ({Token.orth == upperInitial})?
+    (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
+    |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
+   ({Token.kind == number})?
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname7, surname = :a@string} 
