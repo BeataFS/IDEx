@@ -76,13 +76,15 @@ Priority: 99
 Rule: HospNo6
 Priority: 98
 (
+    ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"})?
+    ({Token.kind == punctuation})?
         (({Token.category == NNP, Token.kind == word, Token.length <5})?
         ({Token.kind == punctuation, Token.string == "/"})?
         {Token.category == NNP, Token.kind == word, Token.length <5}
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string == "/"})?
-		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+		{Althnum}):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
@@ -99,4 +101,4 @@ Priority: 98
 		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo6a, HospitalNumber = :a.Numeric.value, string = :a@string}
