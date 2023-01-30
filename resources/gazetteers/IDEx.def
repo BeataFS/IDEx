@@ -4,7 +4,7 @@ birth.lst:person:date_term::Lookup2
 daydate.lst:Numerals:Ordinals::Lookup2
 months.lst:time:date::Lookup2
 letter.lst:reference:ref_term::Lookup2
-consult.lst:reference:health_term::Lookup2
+consult.lst:consultation:health_term::Lookup2
 patient.lst:person:ref_term:gender:Lookup2
 person_female.lst:person_first:female:gender:Lookup2
 person_male.lst:person_first:male:gender:Lookup2
