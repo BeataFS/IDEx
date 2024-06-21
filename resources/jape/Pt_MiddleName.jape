@@ -1,0 +1,46 @@
+Phase:	Person
+Input: Lookup2 Lookup Sentence Opening
+Options: control = Appelt
+
+
+// these rules are done purely in preparation for adding IDEx to ExECT as middleName is one of the features in FORENAME
+// but it was needed as a separate output
+
+Rule: MiddleName1
+Priority: 100
+
+( {Opening}
+    ({Lookup2.majorType == reference})
+    ({Lookup2.majorType == title})?
+    ({Lookup2.majorType == person_first}):a
+   (({Lookup2.majorType == person_first})?):b
+   
+):match
+-->
+:match.Pt_MiddleName = {rule = MiddleName1, first_name = :a@string , middle_name = :b@string} 
+
+Rule: MiddleName2
+Priority: 90
+
+(
+    {Opening}
+    ({Lookup.majorType == title})?
+    ({Lookup})?
+   ({Lookup2.majorType == person_first}):a
+   (({Lookup2.majorType == person_first})?):b
+   
+):match
+-->
+:match.Pt_MiddleName = {rule = MiddleName1, first_name = :a@string , middle_name = :b@string} 
+
+
+Rule: MiddleName3 // when there is no opening phrase
+Priority: 90
+( 
+    ({Lookup2.majorType == reference})
+    ({Lookup2.majorType == title})?
+    ({Lookup2.majorType == person_first}):a
+   (({Lookup2.majorType == person_first})?):b
+):match
+-->
+:match.Pt_MiddleName = {rule = MiddleName3, first_name = :a@string , middle_name = :b@string} 
