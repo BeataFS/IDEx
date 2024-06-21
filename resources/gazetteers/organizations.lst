@@ -1,2 +1,4 @@
 Adolescent Epilepsy Clinic:service=ClinicType
 Neurology Department:service=ClinicType
+EEG:sevice=Department
+MRI:sevice=Department

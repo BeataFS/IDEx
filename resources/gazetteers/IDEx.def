@@ -17,3 +17,5 @@ care.lst:hospital:service::Lookup2
 greeting.lst:letter:section::Lookup2
 organizations.lst:service:::Lookup2
 address.lst:address:latter::Lookup2
+city_UK.lst:address:city::Lookup2
+Phone_prefix.lst:phone_prefix:::Lookup2

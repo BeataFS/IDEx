@@ -1,5 +1,5 @@
 Phase:	Address
-Input: Date_of_Birth Token Sentence NHS_number Hosp_number TelNumber Pt_PostCode
+Input: Date_of_Birth Token Sentence NHS_number Hosp_number TelNumber Pt_PostCode Lookup2
 Options: control = Appelt
 
 
@@ -15,7 +15,7 @@ Priority: 100
     ({TelNumber})?
     ({Token.kind == punctuation})?
     (({Token})+):a
-    ({Pt_PostCode})?
+    ({Pt_PostCode})
    
 ):match
 -->
@@ -64,5 +64,27 @@ Priority: 80
 ):match
 -->
 :match.Pt_Address = {rule = Address3, Address_1 = :a@string} 
+
+
+// when there is no postcode using city list 
+Rule: Address4
+Priority: 60
+
+(
+    ({Date_of_Birth})
+    ({Token.kind == punctuation})?
+    ({Token.kind == punctuation})?
+    ({NHS_number})?
+    ({Token.kind == punctuation})?
+    ({Hosp_number})?
+    ({Token.kind == punctuation})?
+    ({TelNumber})?
+    ({Token.kind == punctuation})?
+    (({Token})[1,5]  
+   ({Lookup2.majorType == address})):a
+   
+):match
+-->
+:match.Pt_Address = {rule = Address4, Address_1 = :a@string} 
 
 
