@@ -3,7 +3,7 @@ Input:  Token Lookup2 SpaceToken Numeric Hosp_number
 Options: control=appelt
 
 
-Rule: nhs1
+Rule: nhs1a
 Priority: 100
 (
         ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS}
@@ -13,20 +13,32 @@ Priority: 100
         {Numeric.rule == Numerals}):a
 ):match
 -->
-:match.NHS_number = {rule = NHS1, NHS_Number = :match.Numeric.value, string = :a@string}
+:match.NHS_number = {rule = NHS1a, NHS_Number = :match.Numeric.value, string = :a@string}
 
 
-Rule: nhs2
+Rule: nhs1b
 Priority: 100
- (      ({Hosp_number})
+ (      ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS})
         ({SpaceToken.kind == "space"})
         {Token.kind == "punctuation", Token.position == "startpunct"}
         ({Numeric.rule == Numerals}):a
        {Token.kind == "punctuation", Token.position == "endpunct"}
 ):match
 -->
-:a.NHS_number = {rule = NHS2, NHS_Number = :match.Numeric.value, string = :a@string}
+:a.NHS_number = {rule = NHS1b, NHS_Number = :match.Numeric.value, string = :a@string}
 
 
+Rule: nhs2b
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term", Lookup2.language == NHS})
+         ({SpaceToken.kind == "space"})?
+        ({Token.kind == "punctuation"})?
+        ({SpaceToken})?
+     ({SpaceToken.kind == control})[1,3]
+        ({Numeric.rule == Numerals}):a
+):match
+-->
+:match.NHS_number = {rule = NHS2b, NHS_Number = :match.Numeric.value, string = :a@string}
 
 
