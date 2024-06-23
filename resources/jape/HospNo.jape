@@ -51,7 +51,7 @@ Priority: 99
 (
 		({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
 		{Token.kind == punctuation}	
-        {Token.category == NNP, Token.kind == Word}
+        {Token.category == NNP, Token.kind == word}
         {Token.kind == punctuation}
 		({Token.category == NNP})?
         ({Token.kind == punctuation})?
