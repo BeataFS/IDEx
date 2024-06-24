@@ -84,7 +84,7 @@ Priority: 98
         {Token.kind == punctuation, Token.string == "/"}
 		({Token.kind == word})?
         ({Token.kind == punctuation, Token.string == "/"})?
-		{Althnum}):a
+		{AlthNum}):a
 ):match
 -->
 :match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
