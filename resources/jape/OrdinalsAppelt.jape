@@ -1,0 +1,14 @@
+Phase: OrdinalsAppelt
+Input:  Lookup2
+Options: control=appelt
+
+Rule: LookupAppelt
+(
+    ({Lookup2.majorType == "Numerals" , Lookup2.minorType == "Ordinals"})
+):match
+-->
+:match.Ordinals = { ruleAppelt = "OrdinalsAppelt",
+majorType = :match.Lookup2.majorType,
+minorType = :match.Lookup2.minorType,
+value = :match.Lookup2.value}
+

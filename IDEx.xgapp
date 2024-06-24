@@ -51,9 +51,6 @@
         <artifact>inter-annotator-agreement</artifact>
         <version>8.5</version>
       </gate.creole.Plugin-Maven>
-      <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$relpath$../ExECT-V2/plugins/Tagger_ConText/</urlString>
-      </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>annie</artifact>
@@ -68,39 +65,6 @@
     <collectionType>java.util.ArrayList</collectionType>
   </urlList>
   <application class="gate.util.persistence.ConditionalSerialAnalyserControllerPersistence">
-    <corpus class="gate.util.persistence.CorpusPersistence">
-      <docList>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>Bio1286_9.txt_00218</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>encoding</string>
-                <string>utf8</string>
-              </entry>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Epi25letters/FinalSET/Bio1286_9.txt</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-      </docList>
-      <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>Corpus for Bio1286_9.txt_00218</resourceName>
-      <initParams class="gate.util.persistence.MapPersistence">
-        <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-        <localMap/>
-      </initParams>
-    </corpus>
     <strategiesList class="gate.util.persistence.CollectionPersistence">
       <localList>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
@@ -548,6 +512,34 @@
                   <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
                     <uriString>$relpath$resources/jape/Opening.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>OrdinalsAppelt</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$resources/jape/OrdinalsAppelt.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -1150,7 +1142,7 @@
                       <string>Pt_Surname</string>
                       <string>Opening</string>
                     </localList>
-                    <collectionType>java.util.Arrays$ArrayList</collectionType>
+                    <collectionType>java.util.ArrayList</collectionType>
                   </gate.util.persistence.CollectionPersistence>
                 </entry>
                 <entry>
@@ -1172,7 +1164,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1186,7 +1178,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\FORENAME.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\FORENAME.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1213,7 +1205,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1227,7 +1219,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\ADDRESS_1.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\ADDRESS_1.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1254,7 +1246,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1268,7 +1260,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\NHS.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\NHS.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1295,7 +1287,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1309,7 +1301,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\POSTCODE.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\POSTCODE.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1336,7 +1328,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1350,7 +1342,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\SURNAME.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\SURNAME.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1377,7 +1369,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1391,7 +1383,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\DateofBirth.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\DateofBirth.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1418,7 +1410,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1432,7 +1424,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\Opening.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\Opening.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1459,7 +1451,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1473,7 +1465,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\Gender.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\Gender.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1500,7 +1492,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1514,7 +1506,7 @@
                     <localMap>
                       <entry>
                         <string>outputFile</string>
-                        <string>C:\Users\Beata\Documents\Epi25letters\IDExOutput\File_1_test\HospNumber.csv</string>
+                        <string>C:\Users\hu235866\Documents\IDEXOutput24_06_24\HospNumber.csv</string>
                       </entry>
                     </localMap>
                   </gate.util.persistence.MapPersistence>
@@ -1593,6 +1585,7 @@
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[46]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[47]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[48]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[49]/pr"/>
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
