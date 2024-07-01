@@ -44,6 +44,7 @@ Priority: 99
 	({Lookup2.majorType == "ClinicDate", Lookup2.minorType == "Date"})
 	({Token.kind == "punctuation"})?
 	({NewLine})[0,4]
+	({SpaceToken})[0,1]
 	({DateBio}):a
 ):match
 -->
