@@ -4,7 +4,24 @@ Options: control = Appelt
 
 
 
-Rule: ForeName1
+Rule: ForeName1  // when first names are not followed by DOB we assume that they are just first names
+Priority: 100     //using just one terms in first name but may have a first name and middle name
+
+( {Opening}
+    ({Lookup2.majorType == reference})
+    ({Lookup2.majorType == title})?
+    ({Lookup2.majorType == person_first}
+   ({Lookup2.majorType == person_first})?):a
+   ({!Lookup2.minorType == date_term})
+   
+):match
+-->
+:a.Pt_Forename = {rule = ForeName1, first_name = :a@string} 
+
+
+
+
+Rule: ForeName2  // When first names are followed by DoB the second one is likely to be a surname
 Priority: 100
 
 ( {Opening}
@@ -12,34 +29,40 @@ Priority: 100
     ({Lookup2.majorType == title})?
     ({Lookup2.majorType == person_first}):a
    (({Lookup2.majorType == person_first})?):b
+   ({Lookup2.minorType == date_term})
    
 ):match
 -->
-:match.Pt_Forename = {rule = ForeName1, first_name = :a@string , middle_name = :b@string} 
+:a.Pt_Forename = {rule = ForeName2, first_name = :a@string } 
 
-Rule: ForeName2
+
+Rule: ForeName3  //as in rule1 but with opening
 Priority: 90
 
 (
     {Opening}
     ({Lookup.majorType == title})?
     ({Lookup})?
-   ({Lookup2.majorType == person_first}):a
-   (({Lookup2.majorType == person_first})?):b
-   
+   ({Lookup2.majorType == person_first}
+   ({Lookup2.majorType == person_first})?):a
+   ({!Lookup2.majorType == person, !Lookup2.minorType == date_term})
 ):match
 -->
-:match.Pt_Forename = {rule = ForeName2, first_name = :a@string , middle_name = :b@string} 
+:a.Pt_Forename = {rule = ForeName3, first_name = :a@string} 
 
 
-Rule: ForeName3 // when there is no opening phrase
+// could add this rule but will need to amend sll the others to add Tokens so for now it's off, adding names to the list is not an ideal solution as there are so many
+/*Rule: ForeName4 // when the name is not on the list of names in Lookup2
 Priority: 90
 ( 
     ({Lookup2.majorType == reference})
     ({Lookup2.majorType == title})?
-    ({Lookup2.majorType == person_first}):a
-   (({Lookup2.majorType == person_first})?):b
+    ({Token.category == NNP, Token.orth == upperInitial}):a
+   ({Token.category == NNP, Token.orth == upperInitial})?
+   ({Token.category == NNP, Token.orth == upperInitial})?
+   ({Token.category == NNP, Token.orth == upperInitial})
+   ({Lookup2.majorType == person, Lookup2.minorType == date_term})
 ):match
 -->
-:match.Pt_Forename = {rule = ForeName3, first_name = :a@string , middle_name = :b@string} 
+:match.Pt_Forename = {rule = ForeName4, first_name = :a@string } */
 
