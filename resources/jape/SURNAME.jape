@@ -1,23 +1,30 @@
 Phase:	Person
-Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth 
+Input: Pt_Forename Lookup2 Token Sentence Date_of_Birth Block
 Options: control = Appelt
 
 
 
 
 
-Rule: Surname0  // when surname is like a First nem e.g. Lewis and there is no other name after it
+
+
+Rule: Surname0  // when surname is like a first name e.g. Lewis and there is no other name after it
+// and  firstname may not be on the list of names so using Token instead, Token string excludes strings that are a part of hyphonated surname  - see rule 8
 Priority: 100
 
 (
-    {Pt_Forename}
-    ({Token.kind == punctuation})?
+   ({Lookup2.minorType == ref_term})
+   ({Token.kind == punctuation})?
+   ({Lookup2.majorType == title})?
+    ({Token.category == NNP, Token.orth == upperInitial})
+    ({Token.category == NNP, Token.orth == upperInitial, Token.string !=~".*-$"})?  
+    ({Token.category == NNP, Token.orth == upperInitial}):item
     ({Date_of_Birth})
     
    
 ):match
 -->
-:match.Pt_Surname = {rule = Surname0, surname = :match.Pt_Forename.middle_name}
+:item.Pt_Surname = {rule = Surname0, surname = :item.Token.string}
 
 
 
@@ -65,7 +72,7 @@ Priority: 90
 
 
 
-Rule: Surname4
+Rule: Surname4 // multiple name surnames
 Priority: 90
 
 (
@@ -119,8 +126,47 @@ Priority: 80
     ({Token.orth == upperInitial})?
     (({Token.orth == upperInitial, Token.category == NNP , Token.length >2 })|({Token.orth == allCaps, Token.category == NNP,Token.length >2 })
     |({Token.orth == upperInitial, Token.category == NN,Token.length >2 })):a
-   ({Token.kind == number})?
+   ({Token.kind == number} | {Token.kind == word})
    
 ):match
 -->
 :match.Pt_Surname = {rule = Surname7, surname = :a@string} 
+
+
+Rule: Surname8  // When first name is not on the list of names and surname is hyphonated
+
+Priority: 100
+
+( 
+     ({Lookup2.minorType == ref_term})
+      ({Token.kind == punctuation})?
+   ({Lookup2.majorType == title})?
+   ({Token.category == NNP, Token.orth == upperInitial})
+    ({Token.category == NNP, Token.orth == upperInitial})?
+    (({Token.category == NNP, Token.orth == upperInitial,Token.string ==~ ".*-$"})
+    ({Token.category == NNP, Token.orth == upperInitial})):a
+    ({Date_of_Birth})
+    
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname8, surname = :a@string}
+
+
+Rule: Surname9  // When first name is not on the list of names and surname is hyphonated
+
+Priority: 100
+
+(
+   {Lookup2.majorType == reference, Lookup2.minorType == ref_term}
+   ({Token.category == NNP, Token.orth == upperInitial})
+    ({Token.category == NNP, Token.orth == upperInitial})?
+     ({Token.category == NNP, Token.orth == upperInitial})?
+    (({Token.category == NNP, Token.orth == upperInitial,Token.string ==~ ".*-$"})
+    ({Token.category == NNP, Token.orth == upperInitial})):a
+    ({Date_of_Birth})
+    
+   
+):match
+-->
+:match.Pt_Surname = {rule = Surname9, surname = :a@string}
