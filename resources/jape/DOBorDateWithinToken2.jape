@@ -29,6 +29,15 @@ if(tokenEnd - tokenStart > 3) {
       getOnlyAnn(tagAnnots).getFeatures().put("Date", "Yes");
       getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
       } 
+      if(string.contains("Date")) {
+      getOnlyAnn(tagAnnots).getFeatures().put("Date", "Yes");
+      getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
+      } 
+      if(string.contains("DATE")) {
+      getOnlyAnn(tagAnnots).getFeatures().put("Date", "Yes");
+      getOnlyAnn(tagAnnots).getFeatures().put("Keep","Yes");
+      } 
+      
    }
    catch(InvalidOffsetException e) {
     // not possible

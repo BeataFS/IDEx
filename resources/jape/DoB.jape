@@ -13,7 +13,7 @@ Priority: 100
 	({Lookup2.majorType == "person", Lookup2.minorType == "date_term"}
 	({Token.kind == "punctuation"})?
 	({SpaceToken.kind == "space"})? 
-	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})[0,2]
 	{DateBio}):a	
 ):match
 -->
@@ -29,7 +29,7 @@ Priority: 100
 	({SpaceToken.kind == "space"})? 
 	({Token.kind == "punctuation"})?
 	({SpaceToken.kind == "space"})? 
-	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})?
+	({SpaceToken.kind == "space"} | {SpaceToken.kind == "control"})[0,2]
 	{DateBio}):a	
 ):match
 -->

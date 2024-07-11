@@ -87,7 +87,7 @@ Priority: 98
 		{AlthNum}):a
 ):match
 -->
-:match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.Numeric.value, string = :a@string}
+:match.Hosp_number = {rule = HospNo6, HospitalNumber = :a.AlthNum.value, string = :a@string}
 
 //To pick up lowercase example from above
 Rule: HospNo6a
